@@ -30,12 +30,36 @@ class CalendarView extends StyleView
     /* Public Methods *********************************************************/
 
     /**
+     * Get js include files required for this component. This overrides the
+     * parent implementation.
+     *
+     * @return array
+     *  An array of js include files the component requires.
+     */
+    public function get_js_includes($local = array())
+    {
+        if (empty($local)) {
+            $local = array(
+                __DIR__ . "/../../../../../../component/moduleScheduledJobsCalendar/js/full-calendar-v6-1-5.min.js",
+                __DIR__ . "/../../../../../../component/moduleScheduledJobsCalendar/js/bootstrap-full-calendar-v6-1-5.global.min.js",
+                __DIR__ . "/../../../../../../component/moduleScheduledJobsCalendar/js/jquery.contextMenu.min.js",
+                __DIR__ . "/js/calendar.js"
+            );
+        }
+        return parent::get_js_includes($local);
+    }
+
+    /**
      * Render the style view.
      */
     public function output_content()
     {
-        require __DIR__ . "/tpl_calendar.php";
-    }
+        // require __DIR__ . "/tpl_calendar.php";
 
+        $container = new BaseStyleComponent("div", array(
+            "css" => "scheduled-jobs-calendar-view"
+        ));
+        $container->output_content();
+    }
 }
 ?>
