@@ -40,9 +40,9 @@ class CalendarView extends StyleView
     {
         if (empty($local)) {
             $local = array(
-                __DIR__ . "/../../../../../../component/moduleScheduledJobsCalendar/js/full-calendar-v6-1-5.min.js",
-                __DIR__ . "/../../../../../../component/moduleScheduledJobsCalendar/js/bootstrap-full-calendar-v6-1-5.global.min.js",
-                __DIR__ . "/../../../../../../component/moduleScheduledJobsCalendar/js/jquery.contextMenu.min.js",
+                __DIR__ . "/js/01_full-calendar-v6-1-5.min.js",
+                __DIR__ . "/js/02_bootstrap-full-calendar-v6-1-5.global.min.js",
+                __DIR__ . "/js/03_jquery.contextMenu.min.js",
                 __DIR__ . "/js/calendar.js"
             );
         }
