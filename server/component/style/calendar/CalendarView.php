@@ -30,7 +30,7 @@ class CalendarView extends FormUserInputView
     public function __construct($model, $controller)
     {
         parent::__construct($model, $controller);
-        $this->form_children = $this->model->get_children();
+        $this->form_children = $this->model->get_children();        
     }
 
     /* Public Methods *********************************************************/
@@ -96,7 +96,7 @@ class CalendarView extends FormUserInputView
      */
     private function output_modal()
     {
-        $this->propagate_input_field_settings($this->form_children, true);
+        $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
         $children[] = new BaseStyleComponent("input", array(
             "type_input" => "hidden",
