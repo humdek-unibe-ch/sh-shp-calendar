@@ -59,6 +59,7 @@ class CalendarView extends StyleView
         $calendar_values['label_month'] = $this->get_field_value('label_month');
         $calendar_values['label_week'] = $this->get_field_value('label_week');
         $calendar_values['label_day'] = $this->get_field_value('label_day');
+        $calendar_values['label_today'] = $this->get_field_value('label_today');
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
         require __DIR__ . "/tpl_calendar.php";
     }

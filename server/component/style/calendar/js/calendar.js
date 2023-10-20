@@ -30,6 +30,13 @@ function initCalendar() {
             center: 'title',
             right: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
         },
+        buttonText: {
+            today: calendar_data['label_today'],
+            day: calendar_data['label_day'],
+            week: calendar_data['label_week'],
+            month: calendar_data['label_month'],
+            list: calendar_data['label_list']
+        },
         weekNumbers: true,
         weekNumberFormat: {
             week: 'long'
