@@ -24,6 +24,7 @@ function initCalendar() {
     calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
         initialView: 'dayGridMonth',
         themeSystem: 'bootstrap',
+        locale: calendar_data['locale'],
         headerToolbar: {
             left: 'prev,next,today,addEventButton',
             center: 'title',
