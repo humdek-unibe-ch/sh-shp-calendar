@@ -10,7 +10,7 @@ var calendar;
  * @returns {void}
  */
 $(document).ready(function () {
-    init_calendar_tasks();
+    initCalendar();
 });
 
 /**
@@ -18,13 +18,14 @@ $(document).ready(function () {
  * @function
  * @returns {void}
  */
-function init_calendar_tasks() {
+function initCalendar() {
     var scheduled_events = $("#scheduled-jobs-events").data('scheduled-jobs');
-    calendar = new FullCalendar.Calendar($('.scheduled-jobs-calendar-view')[0], {
+    var calendar_data = $('#calendar-view').data('data');
+    calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
         initialView: 'dayGridMonth',
         themeSystem: 'bootstrap',
         headerToolbar: {
-            left: 'prev,next,today',
+            left: 'prev,next,today,addEventButton',
             center: 'title',
             right: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
         },
@@ -50,6 +51,26 @@ function init_calendar_tasks() {
         eventDidMount: (info) => {
             info.el.className = info.el.className + " context-menu-event";
             $(info.el).attr("data-event", JSON.stringify(info.event));
+        },
+        customButtons: {
+            addEventButton: {
+                text: calendar_data['label_calendar_add_event'],
+                click: function () {
+                    var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+                    var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+
+                    if (!isNaN(date.valueOf())) { // valid?
+                        calendar.addEvent({
+                            title: 'dynamic event',
+                            start: date,
+                            allDay: true
+                        });
+                        alert('Great. Now, update your database...');
+                    } else {
+                        alert('Invalid date.');
+                    }
+                }
+            }
         }
     });
     calendar.render();

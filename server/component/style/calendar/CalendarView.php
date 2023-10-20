@@ -53,13 +53,10 @@ class CalendarView extends StyleView
      * Render the style view.
      */
     public function output_content()
-    {
-        // require __DIR__ . "/tpl_calendar.php";
-
-        $container = new BaseStyleComponent("div", array(
-            "css" => "scheduled-jobs-calendar-view"
-        ));
-        $container->output_content();
+    {   
+        $calendar_values = [];
+        $calendar_values['label_calendar_add_event'] = $this->get_field_value('label_calendar_add_event');
+        require __DIR__ . "/tpl_calendar.php";
     }
 }
 ?>
