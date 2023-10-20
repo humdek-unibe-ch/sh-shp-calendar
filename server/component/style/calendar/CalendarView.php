@@ -4,15 +4,20 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 ?>
 <?php
-require_once __DIR__ . "/../../../../../../component/style/StyleView.php";
+require_once __DIR__ . "/../../../../../../component/style/formUserInput/FormUserInputView.php";
 
 /**
  * The view class of the button style component.
  * This style components allows to represent a link as a button.
  */
-class CalendarView extends StyleView
+class CalendarView extends FormUserInputView
 {
     /* Private Properties *****************************************************/
+
+    /**
+     * the children fields for the modal view
+     */
+    private $form_children;
 
     /* Constructors ***********************************************************/
 
@@ -22,9 +27,10 @@ class CalendarView extends StyleView
      * @param object $model
      *  The model instance of the component.
      */
-    public function __construct($model)
+    public function __construct($model, $controller)
     {
-        parent::__construct($model);
+        parent::__construct($model, $controller);
+        $this->form_children = $this->model->get_children();
     }
 
     /* Public Methods *********************************************************/
@@ -49,6 +55,24 @@ class CalendarView extends StyleView
         return parent::get_js_includes($local);
     }
 
+    public function output_event_entry()
+    {
+        $res = new BaseStyleComponent(
+            "div",
+            array(
+                "children" => array(
+                    new BaseStyleComponent("button", array(
+                        "label" => "View",
+                        "css" => "flex-grow-0 mb-3",
+                        "id" => "scheduled-jobs-view-calendar-btn",
+                        "url" => $this->model->get_link_url("moduleScheduledJobsCalendar", array("uid" => ":uid", "aid" => ":aid")),
+                        "type" => "primary",
+                    ))
+                )
+            )
+        );
+    }
+
     /**
      * Render the style view.
      */
@@ -62,6 +86,38 @@ class CalendarView extends StyleView
         $calendar_values['label_today'] = $this->get_field_value('label_today');
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
         require __DIR__ . "/tpl_calendar.php";
+
+        $this->output_children();
+        $this->output_modal();
+    }
+
+    /**
+     * render modal form in a card view
+     */
+    private function output_modal()
+    {
+        $this->propagate_input_field_settings($this->form_children, true);
+        $children = $this->form_children;
+        $children[] = new BaseStyleComponent("input", array(
+            "type_input" => "hidden",
+            "name" => "__form_name",
+            "value" => htmlentities($this->name),
+        ));
+        $form = new BaseStyleComponent("form", array(
+            "label" => "Save",
+            "type" => $this->type,
+            "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
+            "children" => $children,
+            "css" => "",
+            "id" => $this->id_section,
+        ));
+        $modal = new BaseStyleComponent('modal', array(
+            'id' => 'modal',
+            'title' => "Please enter your input",
+            'children' => array($form),
+        ));
+
+        $modal->output_content();
     }
 }
 ?>
