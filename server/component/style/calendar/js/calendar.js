@@ -80,11 +80,14 @@ function initCalendar() {
  * @param {Array} events - The  events to be displayed in the calendar.
  * @returns {Array} - The formatted events.
  */
-function prepare_events(events){
+function prepare_events(events) {
     events.forEach(event => {
         // event.url = event.url.replace(':sjid', event.id);
         // event['classNames'] = 'scheduled-jobs-calendar-event scheduled-jobs-calendar-' + event.status_code + ' scheduled-jobs-calendar-' + event.type_code;
-        event['start'] = event['edit_time'];
+        if (!event['start'] || event['start'] == '') {
+            // if start date is not set use edit_time            
+            event['start'] = event['edit_time'];
+        }
 
     });
     console.log(events);
