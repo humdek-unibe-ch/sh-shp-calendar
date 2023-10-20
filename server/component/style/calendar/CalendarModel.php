@@ -44,9 +44,25 @@ class CalendarModel extends FormUserInputModel
         $this->fetch_events();
     }
 
+    /* Private Methods *********************************************************/
+
+    /**
+     * Fetch events from DB
+     * @return array
+     * Return array with the events
+     */
+    private function fetch_events(){
+        $this->events = $this->user_input->get_data($this->section_id, '', true, FORM_INTERNAL);
+    }
+
     /* Public Methods *********************************************************/
 
-    public function fetch_events(){
-        $this->events = $this->user_input->get_data($this->section_id, '', true, FORM_INTERNAL);
+    /**
+     * Get the events
+     * @return array
+     * Return array with the events
+     */
+    public function get_events(){
+        return $this->events;
     }
 }

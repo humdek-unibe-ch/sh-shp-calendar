@@ -21,6 +21,8 @@ $(document).ready(function () {
 function initCalendar() {
     var scheduled_events = $("#scheduled-jobs-events").data('scheduled-jobs');
     var calendar_data = $('#calendar-view').data('data');
+    var events = $('#calendar-view').data('events');
+    console.log(events);
     calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
         initialView: 'dayGridMonth',
         themeSystem: 'bootstrap',
