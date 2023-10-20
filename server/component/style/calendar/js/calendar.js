@@ -46,7 +46,7 @@ function initCalendar() {
         height: 'auto',
         firstDay: 1,
         eventTimeFormat: { hour: 'numeric', minute: '2-digit', hour12: false },
-        // events: prepare_scheduled_events(scheduled_events),
+        events: prepare_events(events),
         eventContent: function (info) {
             var dot = document.createElement('div');
             $(dot).addClass('fc-daygrid-event-dot');
@@ -72,4 +72,21 @@ function initCalendar() {
         }
     });
     calendar.render();
+}
+
+/**
+ * Prepare the  events for display in the calendar.
+ * @function
+ * @param {Array} events - The  events to be displayed in the calendar.
+ * @returns {Array} - The formatted events.
+ */
+function prepare_events(events){
+    events.forEach(event => {
+        // event.url = event.url.replace(':sjid', event.id);
+        // event['classNames'] = 'scheduled-jobs-calendar-event scheduled-jobs-calendar-' + event.status_code + ' scheduled-jobs-calendar-' + event.type_code;
+        event['start'] = event['edit_time'];
+
+    });
+    console.log(events);
+    return events;
 }
