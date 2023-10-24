@@ -30,7 +30,7 @@ class CalendarView extends FormUserInputView
     public function __construct($model, $controller)
     {
         parent::__construct($model, $controller);
-        $this->form_children = $this->model->get_children();        
+        $this->form_children = $this->model->get_children();
     }
 
     /* Public Methods *********************************************************/
@@ -86,8 +86,14 @@ class CalendarView extends FormUserInputView
         $calendar_values['label_today'] = $this->get_field_value('label_today');
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
         require __DIR__ . "/tpl_calendar.php";
+        if (
+            method_exists($this->model, "is_cms_page") && $this->model->is_cms_page() &&
+            method_exists($this->model, "is_cms_page_editing") && $this->model->is_cms_page_editing()
+        ) {
+            // show the children in edit mode only. 
+            $this->output_children();
+        }
 
-        $this->output_children();
         $this->output_modal();
     }
 

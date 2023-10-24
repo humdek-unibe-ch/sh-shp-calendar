@@ -19,9 +19,10 @@ $(document).ready(function () {
  * @returns {void}
  */
 function initCalendar() {
-    var scheduled_events = $("#scheduled-jobs-events").data('scheduled-jobs');
     var calendar_data = $('#calendar-view').data('data');
     var events = $('#calendar-view').data('events');
+    $('#calendar-view').removeAttr('data-events');
+    $('#calendar-view').removeAttr('data-data');
     console.log(events);
     calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
         initialView: 'dayGridMonth',
@@ -39,13 +40,18 @@ function initCalendar() {
             month: calendar_data['label_month'],
             list: calendar_data['label_list']
         },
+        eventTimeFormat: {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hourCycle: 'h23'
+        },
         weekNumbers: true,
         weekNumberFormat: {
             week: 'long'
         },
         height: 'auto',
         firstDay: 1,
-        eventTimeFormat: { hour: 'numeric', minute: '2-digit', hour12: false },
         events: prepare_events(events),
         eventContent: function (info) {
             var dot = document.createElement('div');
