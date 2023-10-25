@@ -11,6 +11,7 @@ This is a SelfhelpPlugin that is used for presenting a calendar for the mobile a
 # Config
  json structure:  
  `{
+    "css": "class name",
     "events": {
         "title": "your_title_input_name",
         "description": "your_description_input_name",

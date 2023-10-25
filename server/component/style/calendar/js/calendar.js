@@ -78,17 +78,24 @@ function initCalendar() {
  * @returns {Array} - The formatted events.
  */
 function prepare_events(events, config) {
-    if (!config || !config['events']) {
+    if (!config) {
         // if no config return events
         return events;
     }
     var configEvents = config['events'];
     events.forEach(event => {
-        Object.keys(configEvents).forEach(key => {
-            if (event[configEvents[key]]) {
-                event[key] = event[configEvents[key]];
-            }
-        });
+        if (configEvents) {
+            Object.keys(configEvents).forEach(key => {
+                if (event[configEvents[key]]) {
+                    event[key] = event[configEvents[key]];
+                }
+            });
+        }
+        if (config['css']) {
+            // there is a global css for the event object
+            event['className'] = event['className'] + ' ' + config['css'];
+
+        }
     });
     return events;
 }
