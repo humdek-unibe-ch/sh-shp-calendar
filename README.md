@@ -8,6 +8,17 @@ This is a SelfhelpPlugin that is used for presenting a calendar for the mobile a
  - Checkout the latest verison 
  - Execute all `.sql` script in the DB folder in their version order
 
+# Config
+ json structure:
+ `{
+    "events": {
+        "title": "your_title_input_name",
+        "description": "your_description_input_name",
+        "start": "your_start_date_input",
+        "class_name": "your_class_name_input"
+    }
+ }`
+
 # Requirements
 
- - SelfHelp v5.0.0+
+ - SelfHelp v6.5.0+

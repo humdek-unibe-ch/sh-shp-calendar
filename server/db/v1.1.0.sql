@@ -27,6 +27,9 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (ge
 -- add field name to style calendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (get_style_id('calendar'), get_field_id('name'), 'The name of the form where the replies will be stored.');
 
+-- add field css_mobile
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('css_mobile'), NULL, 'Allows to assign CSS classes to the root item of the style for the mobile version.');
+
 -- add field is_log to style calendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('calendar'), get_field_id('is_log'), 1, 'This field allows to control how the data is saved in the database:
  - `disabled`: The submission of data will always overwrite prior submissions of the same user. This means that the user will be able to continously update the data that was submitted here. Any input field that is used within this form will always show the current value stored in the database (if nothing has been submitted as of yet, the input field will be empty or set to a default).
@@ -35,3 +38,7 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
 UPDATE styles
 SET id_type = 2
 WHERE `name` = 'calendar';
+
+UPDATE styles_fields
+SET `help` = 'Define the configuration of the calendar. Refer to the documentation of [Calendar Style](http://phhum-a209-cp.unibe.ch:10012/SLP/plugins/calendar/blob/master/README.md) for more information'
+WHERE id_styles = get_style_id('calendar') AND id_fields = get_field_id('config');

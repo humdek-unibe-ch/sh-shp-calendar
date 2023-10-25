@@ -1,6 +1,6 @@
 # v1.0.1 - Requires SelfHelp 6.5.0+ (Unpublished)
 ### New Features
- -  show calendar for web
+ -  rework calendar. Now it is based  on [FullCalendar](https://fullcalendar.io) library
 
 # v1.0.0
 
