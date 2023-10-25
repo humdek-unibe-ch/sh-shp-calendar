@@ -107,6 +107,11 @@ class CalendarView extends FormUserInputView
             "name" => "__form_name",
             "value" => htmlentities($this->name),
         ));
+        $children[] = new BaseStyleComponent("input", array(
+            "type_input" => "hidden",
+            "name" => "selected_record_id",
+            "value" => null,
+        ));
         $form = new BaseStyleComponent("form", array(
             "label" => "Save",
             "type" => $this->type,

@@ -63,12 +63,21 @@ function initCalendar() {
                 text: calendar_data['label_calendar_add_event'],
                 click: function () {
                     $('#modal input[type!="hidden"]').val('');
+                    $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
                     $("#modal").modal();
                 }
             }
         },
         eventClick: function (info) {
             console.log(info.event.extendedProps);
+            if ($('input[name="selected_record_id"]').length === 0) {
+                // if the selected input record is not added, add it
+                var selectedRecord = $('<input>').attr({
+                    type: 'hidden',
+                    name: 'selected_record_id',
+                });
+                $('input[name="__form_name"]').after(selectedRecord);
+            }
             var entryValues = info.event.extendedProps;
             Object.keys(entryValues).forEach(key => {
                 if (key.startsWith("_")) {
@@ -78,6 +87,7 @@ function initCalendar() {
                     $(fieldNameSearch).val(entryValues[key]);
                 }
             });
+            $('input[name="selected_record_id"]').val(entryValues['_record_id']);
             $("#modal").modal();
         }
     });
