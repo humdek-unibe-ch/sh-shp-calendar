@@ -9,7 +9,7 @@ This is a SelfhelpPlugin that is used for presenting a calendar for the mobile a
  - Execute all `.sql` script in the DB folder in their version order
 
 # Config
- json structure:
+ json structure:  
  `{
     "events": {
         "title": "your_title_input_name",
@@ -19,7 +19,7 @@ This is a SelfhelpPlugin that is used for presenting a calendar for the mobile a
     }
  }`
 
- 
+
  Full calendar events properties can be seen [here](https://fullcalendar.io/docs/event-object)
 
 # Requirements
