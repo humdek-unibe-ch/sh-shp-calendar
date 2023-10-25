@@ -23,7 +23,6 @@ function initCalendar() {
     var events = $('#calendar-view').data('events');
     $('#calendar-view').removeAttr('data-events');
     $('#calendar-view').removeAttr('data-data');
-    console.log(calendar_data);
     if (!calendar_data) {
         return;
     }
@@ -76,7 +75,6 @@ function initCalendar() {
             }
         },
         eventClick: function (info) {
-            console.log(info.event.extendedProps);
             $('#modal input[type="radio"]').prop('checked', false); //remove all set checked values
             $('#modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
             $('#modal select').selectpicker('deselectAll').selectpicker('render');
