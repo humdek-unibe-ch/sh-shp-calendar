@@ -24,7 +24,7 @@ function initCalendar() {
     $('#calendar-view').removeAttr('data-events');
     $('#calendar-view').removeAttr('data-data');
     console.log(calendar_data);
-    if(!calendar_data){
+    if (!calendar_data) {
         return;
     }
     calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
@@ -70,6 +70,7 @@ function initCalendar() {
                     $('#modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
                     $('#modal textarea[type!="hidden"]').val('');
                     $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
+                    $('#modal select').selectpicker('deselectAll').selectpicker('render');
                     $("#modal").modal();
                 }
             }
@@ -78,6 +79,7 @@ function initCalendar() {
             console.log(info.event.extendedProps);
             $('#modal input[type="radio"]').prop('checked', false); //remove all set checked values
             $('#modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
+            $('#modal select').selectpicker('deselectAll').selectpicker('render');
             if ($('input[name="selected_record_id"]').length === 0) {
                 // if the selected input record is not added, add it
                 var selectedRecord = $('<input>').attr({
@@ -90,20 +92,28 @@ function initCalendar() {
             Object.keys(entryValues).forEach(key => {
                 if (key.startsWith("_")) {
                     // set the value from the event
-                    var fieldName = key.replace('_', '');
-                    var fieldNameSearch = 'input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]), textarea[name="' + fieldName + '[value]"]';
-                    $(fieldNameSearch).val(entryValues[key]);
-                    // Search for radio input and textarea elements
-                    var fieldNameSearchRadio = 'input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
-                    $(fieldNameSearchRadio).each(function () {
-                        if ($(this).is(':radio') || $(this).is(':checkbox')) { // Check if it's a radio input
-                            if ($(this).val() == entryValues[key]) {
-                                $(this).prop('checked', true); // Set the "checked" property to true
+                    if (entryValues[key]) {
+                        var fieldName = key.replace('_', '');
+                        var fieldNameSearch = 'input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
+                        $(fieldNameSearch).val(entryValues[key]);
+                        try {
+                            var decodedArray = JSON.parse(entryValues[key].replace(/&quot;/g, '"'));   
+                            $('select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);                            
+                        } catch (error) {
+                            
+                        }                                                
+                        // Search for radio input and textarea elements
+                        var fieldNameSearchRadioCheck = 'input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
+                        $(fieldNameSearchRadioCheck).each(function () {
+                            if ($(this).is(':radio') || $(this).is(':checkbox')) { // Check if it's a radio input
+                                if ($(this).val() == entryValues[key]) {
+                                    $(this).prop('checked', true); // Set the "checked" property to true
+                                }
+                            } else { // It's a textarea element
+                                $(this).val(entryValues[key]); // Set the value for textarea elements
                             }
-                        } else { // It's a textarea element
-                            $(this).val(entryValues[key]); // Set the value for textarea elements
-                        }
-                    });
+                        });
+                    }
                 }
             });
             $('input[name="selected_record_id"]').val(entryValues['_record_id']);
