@@ -48,7 +48,7 @@ class CalendarComponent extends BaseComponent
         parent::__construct($model, $view, $controller);
         if ($this->controller && !isset($_POST[ENTRY_RECORD_ID])) {
             // dont execute it if it is from entry; It will be handled later
-            $this->controller->execute();
+            $this->controller->execute();            
         }
     }
 }

@@ -42,3 +42,6 @@ WHERE `name` = 'calendar';
 UPDATE styles_fields
 SET `help` = 'Define the configuration of the calendar. Refer to the documentation of [Calendar Style](http://phhum-a209-cp.unibe.ch:10012/SLP/plugins/calendar/blob/master/README.md) for more information'
 WHERE id_styles = get_style_id('calendar') AND id_fields = get_field_id('config');
+
+-- add field redirect_at_end to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('redirect_at_end'), '#', 'Redirect to this url once the calendar entry is added');
