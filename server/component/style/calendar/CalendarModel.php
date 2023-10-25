@@ -40,7 +40,7 @@ class CalendarModel extends FormUserInputModel
      */
     public function __construct($services, $id, $params, $id_page, $entry_record)
     {
-        parent::__construct($services, $id, $params, $id_page, $entry_record); 
+        parent::__construct($services, $id, $params, $id_page, $entry_record);
         $this->fetch_events();
     }
 
@@ -51,8 +51,15 @@ class CalendarModel extends FormUserInputModel
      * @return array
      * Return array with the events
      */
-    private function fetch_events(){
+    private function fetch_events()
+    {
         $this->events = $this->user_input->get_data($this->section_id, '', true, FORM_INTERNAL);
+        foreach ($this->events as $key => $event) {
+            foreach ($event as $event_key => $value) {
+                // add all values with _ and they will be added to the extended properties of the calendar
+                $this->events[$key]['_' . $event_key] = $value;
+            }
+        }
     }
 
     /* Public Methods *********************************************************/
@@ -62,7 +69,8 @@ class CalendarModel extends FormUserInputModel
      * @return array
      * Return array with the events
      */
-    public function get_events(){
+    public function get_events()
+    {
         return $this->events;
     }
 }

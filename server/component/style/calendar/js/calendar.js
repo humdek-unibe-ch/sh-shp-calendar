@@ -62,11 +62,22 @@ function initCalendar() {
             addEventButton: {
                 text: calendar_data['label_calendar_add_event'],
                 click: function () {
+                    $('#modal input[type!="hidden"]').val('');
                     $("#modal").modal();
                 }
             }
         },
         eventClick: function (info) {
+            console.log(info.event.extendedProps);
+            var entryValues = info.event.extendedProps;
+            Object.keys(entryValues).forEach(key => {
+                if (key.startsWith("_")) {
+                    // set the value from the event
+                    var fieldName = key.replace('_', '');
+                    var fieldNameSearch = 'input[name="' + fieldName + '[value]"]';
+                    $(fieldNameSearch).val(entryValues[key]);
+                }
+            });
             $("#modal").modal();
         }
     });
