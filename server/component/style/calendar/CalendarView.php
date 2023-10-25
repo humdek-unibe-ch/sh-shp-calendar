@@ -48,29 +48,26 @@ class CalendarView extends FormUserInputView
             $local = array(
                 __DIR__ . "/js/01_full-calendar-v6-1-5.min.js",
                 __DIR__ . "/js/02_bootstrap-full-calendar-v6-1-5.global.min.js",
-                __DIR__ . "/js/03_jquery.contextMenu.min.js",
                 __DIR__ . "/js/calendar.js"
             );
         }
         return parent::get_js_includes($local);
     }
 
-    public function output_event_entry()
+    /**
+     * Get css include files required for this component. This overrides the
+     * parent implementation.
+     *
+     * @return array
+     *  An array of css include files the component requires.
+     */
+    public function get_css_includes($local = array())
     {
-        $res = new BaseStyleComponent(
-            "div",
-            array(
-                "children" => array(
-                    new BaseStyleComponent("button", array(
-                        "label" => "View",
-                        "css" => "flex-grow-0 mb-3",
-                        "id" => "scheduled-jobs-view-calendar-btn",
-                        "url" => $this->model->get_link_url("moduleScheduledJobsCalendar", array("uid" => ":uid", "aid" => ":aid")),
-                        "type" => "primary",
-                    ))
-                )
-            )
+        $local = array(
+            __DIR__ . "/css/event-calendar.min.css",
+            __DIR__ . "/css/calendar.css"
         );
+        return parent::get_css_includes($local);
     }
 
     /**

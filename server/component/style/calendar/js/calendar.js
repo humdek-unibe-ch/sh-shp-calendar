@@ -65,6 +65,9 @@ function initCalendar() {
                     $("#modal").modal();
                 }
             }
+        },
+        eventClick: function (info) {
+            $("#modal").modal();
         }
     });
     calendar.render();
