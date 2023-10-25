@@ -18,6 +18,8 @@ This is a SelfhelpPlugin that is used for presenting a calendar for the mobile a
         "class_name": "your_class_name_input"
     }
  }`
+
+ 
  Full calendar events properties can be seen [here](https://fullcalendar.io/docs/event-object)
 
 # Requirements
