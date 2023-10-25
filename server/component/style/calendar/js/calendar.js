@@ -64,10 +64,12 @@ function initCalendar() {
             title.innerHTML = info.event.title;
             return { domNodes: [dot, time, title] }
         },
-        eventDidMount: (info) => {
-            info.el.className = info.el.className + " context-menu-event";
-            $(info.el).attr("data-event", JSON.stringify(info.event));
-        },
+        eventDidMount: function(info) {
+            $(info.el).attr('data-toggle', 'popover');
+            $(info.el).attr('data-content', info.event.extendedProps.description);
+            $(info.el).attr('data-trigger', 'hover focus');
+            $(info.el).attr('data-placement', 'top');
+          },
         customButtons: {
             addEventButton: {
                 text: calendar_data['label_calendar_add_event'],
@@ -94,8 +96,8 @@ function prepare_events(events) {
             // if start date is not set use edit_time            
             event['start'] = event['edit_time'];
         }
-
-    });
+        // event['display'] = 'background';
+    });    
     console.log(events);
     return events;
 }
