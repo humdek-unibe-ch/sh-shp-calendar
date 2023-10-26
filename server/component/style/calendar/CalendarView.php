@@ -92,7 +92,7 @@ class CalendarView extends FormUserInputView
             $this->output_children();
         }
 
-        $this->output_modal();
+        
     }
 
     /**
