@@ -121,8 +121,8 @@ class CalendarView extends FormUserInputView
             "id" => $this->id_section,
         ));
         $modal = new BaseStyleComponent('modal', array(
-            'id' => 'modal',
-            'title' => "Please enter your input",
+            'id' => 'calendar-event',
+            'title' => $this->get_field_value('label_calendar_event'),
             'children' => array($form),
         ));
 

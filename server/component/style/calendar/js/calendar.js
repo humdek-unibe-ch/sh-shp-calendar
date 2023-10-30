@@ -11,6 +11,9 @@ var calendar;
  */
 $(document).ready(function () {
     initCalendar();
+    setTimeout(() => {
+        test();
+    }, 2000);
 });
 
 /**
@@ -47,6 +50,7 @@ function initCalendar() {
             minute: '2-digit',
             hourCycle: 'h23'
         },
+        eventOverlap: true,
         weekNumbers: true,
         weekNumberFormat: {
             week: 'long'
@@ -64,20 +68,20 @@ function initCalendar() {
             addEventButton: {
                 text: calendar_data['label_calendar_add_event'],
                 click: function () {
-                    $('#modal input[type="radio"]').prop('checked', false); //remove all set checked values
-                    $('#modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
-                    $('#modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
-                    $('#modal textarea[type!="hidden"]').val('');
+                    $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
+                    $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
+                    $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
+                    $('.modal textarea[type!="hidden"]').val('');
                     $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
-                    $('#modal select').selectpicker('deselectAll').selectpicker('render');
-                    $("#modal").modal();
+                    $('.modal select').selectpicker('deselectAll').selectpicker('render');
+                    $("#calendar-event").modal();
                 }
             }
         },
         eventClick: function (info) {
-            $('#modal input[type="radio"]').prop('checked', false); //remove all set checked values
-            $('#modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
-            $('#modal select').selectpicker('deselectAll').selectpicker('render');
+            $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
+            $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
+            $('.modal select').selectpicker('deselectAll').selectpicker('render');
             if ($('input[name="selected_record_id"]').length === 0) {
                 // if the selected input record is not added, add it
                 var selectedRecord = $('<input>').attr({
@@ -95,11 +99,11 @@ function initCalendar() {
                         var fieldNameSearch = 'input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
                         $(fieldNameSearch).val(entryValues[key]);
                         try {
-                            var decodedArray = JSON.parse(entryValues[key].replace(/&quot;/g, '"'));   
-                            $('select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);                            
+                            var decodedArray = JSON.parse(entryValues[key].replace(/&quot;/g, '"'));
+                            $('select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);
                         } catch (error) {
-                            
-                        }                                                
+
+                        }
                         // Search for radio input and textarea elements
                         var fieldNameSearchRadioCheck = 'input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
                         $(fieldNameSearchRadioCheck).each(function () {
@@ -115,8 +119,19 @@ function initCalendar() {
                 }
             });
             $('input[name="selected_record_id"]').val(entryValues['_record_id']);
-            $("#modal").modal();
-        }
+            $("#calendar-event").modal();
+        },
+        eventContent: function (info) {
+            var dot = document.createElement('div');
+            $(dot).addClass('fc-daygrid-event-dot');
+            var time = document.createElement('div');
+            $(time).addClass('fc-event-time');
+            time.innerHTML = info.event.start.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false }) + " <span>[" + info.event.extendedProps.type_code + "]</span>";
+            var title = document.createElement('div');
+            $(title).addClass('fc-event-title');
+            title.innerHTML = info.event.title;
+            return { domNodes: [dot, time, title] }
+        },
     });
     calendar.render();
 }
@@ -145,8 +160,14 @@ function prepare_events(events, config) {
         if (config['css']) {
             // there is a global css for the event object
             event['className'] = event['className'] + ' ' + config['css'];
-
         }
+        event['overlap'] = "false";
+        event['className'] = event['className'] + ' ' + event['record_id'];
     });
+    console.log(events);
     return events;
+}
+
+function test() {
+    // $('.0000000755').appendTo($('.0000000772:first'));
 }
