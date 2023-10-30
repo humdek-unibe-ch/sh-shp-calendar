@@ -29,12 +29,13 @@ function initCalendar() {
     if (!calendar_data) {
         return;
     }
+    var buttons = get_custom_buttons(calendar_data);
     calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
         initialView: 'dayGridMonth',
         themeSystem: 'bootstrap',
         locale: calendar_data['locale'],
         headerToolbar: {
-            left: 'prev,next,today,addEventButton',
+            left: buttons['buttons'],
             center: 'title',
             right: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
         },
@@ -64,20 +65,7 @@ function initCalendar() {
             $(info.el).attr('data-trigger', 'hover focus');
             $(info.el).attr('data-placement', 'top');
         },
-        customButtons: {
-            addEventButton: {
-                text: calendar_data['label_calendar_add_event'],
-                click: function () {
-                    $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
-                    $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
-                    $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
-                    $('.modal textarea[type!="hidden"]').val('');
-                    $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
-                    $('.modal select').selectpicker('deselectAll').selectpicker('render');
-                    $("#calendar-event").modal();
-                }
-            }
-        },
+        customButtons: buttons['customButtons'],
         eventClick: function (info) {
             $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
             $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
@@ -134,6 +122,39 @@ function initCalendar() {
         },
     });
     calendar.render();
+}
+
+function get_custom_buttons(calendar_data){
+    var res = {
+        'customButtons': {
+            addEventButton: {
+                text: calendar_data['label_calendar_add_event'],
+                click: function () {
+                    $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
+                    $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
+                    $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
+                    $('.modal textarea[type!="hidden"]').val('');
+                    $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
+                    $('.modal select').selectpicker('deselectAll').selectpicker('render');
+                    $("#calendar-event").modal();
+                }
+            },
+            addCalendarButton: {
+                text: calendar_data['label_add_calendar'],
+                click: function () {
+                    $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
+                    $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
+                    $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
+                    $('.modal textarea[type!="hidden"]').val('');
+                    $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
+                    $('.modal select').selectpicker('deselectAll').selectpicker('render');
+                    $("#calendar-event").modal();
+                }
+            }
+        },
+        'buttons': 'prev,next,today,addCalendarButton,addEventButton'
+    }
+    return res;
 }
 
 /**
