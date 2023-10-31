@@ -1,3 +1,9 @@
-.fc-event{
+.fc-event {
     cursor: pointer;
+}
+
+.delete-event-form {
+    position: absolute;
+    -webkit-transform: translate(0, -100%);
+    right: 1rem;
 }

@@ -53,7 +53,7 @@ class CalendarModel extends FormUserInputModel
      */
     private function fetch_events()
     {
-        $this->events = $this->user_input->get_data($this->section_id, '', true, FORM_INTERNAL);
+        $this->events = $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
         foreach ($this->events as $key => $event) {
             foreach ($event as $event_key => $value) {
                 // add all values with _ and they will be added to the extended properties of the calendar

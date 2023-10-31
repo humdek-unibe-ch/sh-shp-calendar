@@ -92,8 +92,6 @@ class CalendarView extends FormUserInputView
             // show the children in edit mode only. 
             $this->output_children();
         }
-
-        
     }
 
     /**
@@ -103,6 +101,25 @@ class CalendarView extends FormUserInputView
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
+        $delete_entry = new BaseStyleComponent("form", array(
+            "label" => "Delete",
+            "type" => 'danger',
+            "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
+            "children" => array(
+                new BaseStyleComponent("input", array(
+                    "type_input" => "hidden",
+                    "name" => "__form_name",
+                    "value" => htmlentities($this->name),
+                )),
+                new BaseStyleComponent("input", array(
+                    "type_input" => "hidden",
+                    "name" => 'delete_record_id',
+                    "value" => null,
+                ))
+            ),
+            "css" => "delete-event-form",
+            "id" => $this->id_section,
+        ));
         $children[] = new BaseStyleComponent("input", array(
             "type_input" => "hidden",
             "name" => "__form_name",
@@ -118,13 +135,15 @@ class CalendarView extends FormUserInputView
             "type" => $this->type,
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => $children,
-            "css" => "",
+            "css" => "event-form",
             "id" => $this->id_section,
         ));
         $modal = new BaseStyleComponent('modal', array(
             'id' => 'calendar-event',
             'title' => $this->get_field_value('label_calendar_event'),
-            'children' => array($form),
+            'children' => array(
+                $form, $delete_entry
+            ),
         ));
 
         $modal->output_content();

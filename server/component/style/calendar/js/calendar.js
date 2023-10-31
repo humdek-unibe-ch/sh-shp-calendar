@@ -70,11 +70,19 @@ function initCalendar() {
             $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
             $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
             $('.modal select').selectpicker('deselectAll').selectpicker('render');
-            if ($('input[name="selected_record_id"]').length === 0) {
+            if ($('.event-form input[name="selected_record_id"]').length === 0) {
                 // if the selected input record is not added, add it
                 var selectedRecord = $('<input>').attr({
                     type: 'hidden',
                     name: 'selected_record_id',
+                });
+                $('input[name="__form_name"]').after(selectedRecord);
+            }
+            if ($('.delete-event-form input[name="delete_record_id"]').length === 0) {
+                // if the delete input record is not added, add it
+                var selectedRecord = $('<input>').attr({
+                    type: 'hidden',
+                    name: 'delete_record_id',
                 });
                 $('input[name="__form_name"]').after(selectedRecord);
             }
@@ -107,6 +115,9 @@ function initCalendar() {
                 }
             });
             $('input[name="selected_record_id"]').val(entryValues['_record_id']);
+            $('input[name="delete_record_id"]').val(entryValues['_record_id']);
+            console.log(entryValues['_record_id']);
+            $('.delete-event-form').removeClass('d-none'); // show delete only if we edit event
             $("#calendar-event").modal();
         },
         eventContent: function (info) {
@@ -124,7 +135,7 @@ function initCalendar() {
     calendar.render();
 }
 
-function get_custom_buttons(calendar_data){
+function get_custom_buttons(calendar_data) {
     var res = {
         'customButtons': {
             addEventButton: {
@@ -135,7 +146,9 @@ function get_custom_buttons(calendar_data){
                     $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
                     $('.modal textarea[type!="hidden"]').val('');
                     $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
+                    $('input[name="delete_record_id"]').remove(); // remove the delete record if it is there
                     $('.modal select').selectpicker('deselectAll').selectpicker('render');
+                    $('.delete-event-form').addClass('d-none');
                     $("#calendar-event").modal();
                 }
             },
