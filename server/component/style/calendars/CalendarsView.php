@@ -117,9 +117,40 @@ class CalendarsView extends FormUserInputView
     }
 
     /**
-     * render modal form in a card view for the event
+     * render modal form in a card view for the new calendar
      */
-    public function output_calendar_modal()
+    public function output_new_calendar_modal()
+    {
+        $this->propagate_input_field_settings($this->form_children, false);
+        $children = $this->form_children;
+        $children[] = new BaseStyleComponent("input", array(
+            "type_input" => "hidden",
+            "name" => "__form_name",
+            "value" => htmlentities($this->name),
+        ));
+        $form = new BaseStyleComponent("form", array(
+            "label" => "Save",
+            "type" => $this->type,
+            "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
+            "children" => $children,
+            "css" => "calendar-form",
+            "id" => $this->id_section,
+        ));
+        $modal = new BaseStyleComponent('modal', array(
+            'id' => 'new-calendar',
+            'title' => $this->get_field_value('label_calendar'),
+            'children' => array(
+                $form
+            ),
+        ));
+
+        $modal->output_content();
+    }
+
+    /**
+     * render modal form in a card view for the edit mode for calendar
+     */
+    public function output_edit_calendar_modal()
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -139,7 +170,7 @@ class CalendarsView extends FormUserInputView
                     "value" => null,
                 ))
             ),
-            "css" => "delete-calendar-form d-none",
+            "css" => "delete-calendar-form",
             "id" => $this->id_section,
         ));
         $children[] = new BaseStyleComponent("input", array(
@@ -161,7 +192,7 @@ class CalendarsView extends FormUserInputView
             "id" => $this->id_section,
         ));
         $modal = new BaseStyleComponent('modal', array(
-            'id' => 'calendar',
+            'id' => 'edit-calendar',
             'title' => $this->get_field_value('label_calendar'),
             'children' => array(
                 $form, $delete_calendar

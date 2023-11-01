@@ -5,5 +5,6 @@
 ?>
 <div id="calendars-holder" class="<?php echo $this->css; ?>">
     <?php $this->output_calendars(); ?>
-    <?php $this->output_calendar_modal() ?>        
+    <?php $this->output_new_calendar_modal() ?>        
+    <?php $this->output_edit_calendar_modal() ?>   
 </div>
