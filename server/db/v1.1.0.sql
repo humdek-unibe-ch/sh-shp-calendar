@@ -66,3 +66,6 @@ WHERE `name` = 'calendar';
 
 -- Add new style calendars
 INSERT IGNORE INTO `styles` (`name`, `id_type`, id_group, description) VALUES ('calendars', '2', (SELECT id FROM styleGroup WHERE `name` = 'Form' LIMIT 1), 'Calendars style. View and add calendars.');
+
+-- add field css to style calendars
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('css'), NULL, 'Allows to assign CSS classes to the root item of the style.');

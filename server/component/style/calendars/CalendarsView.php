@@ -73,6 +73,19 @@ class CalendarsView extends FormUserInputView
     }
 
     /**
+     * render calendars list
+     */
+    public function output_calendars()
+    {
+        $calendars_card = new BaseStyleComponent("card", array(
+            "title" => "Calendars",
+            "is_expanded" => true,
+            "is_collapsible" => false
+        ));
+        $calendars_card->output_content();
+    }
+
+    /**
      * render modal form in a card view for the event
      */
     public function output_event_modal()
@@ -126,6 +139,5 @@ class CalendarsView extends FormUserInputView
 
         // $modal->output_content();
     }
-
 }
 ?>
