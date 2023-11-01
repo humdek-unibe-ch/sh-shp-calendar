@@ -94,7 +94,7 @@ class CalendarsView extends FormUserInputView
                 "children" => array(
                     new BaseStyleComponent("markdownInline", array(
                         "css" => "calendar-name",
-                        "text_md_inline" => $value['name']
+                        "text_md_inline" => isset($value['calendar_name']) ? $value['calendar_name'] : 'Please use input with name `calendar_name`'
                     )),
                     new BaseStyleComponent("button", array(
                         "css" => "calendar-edit-btn btn-sm",
