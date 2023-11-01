@@ -16,11 +16,6 @@ class CalendarsModel extends FormUserInputModel
 {
     /* Private Properties *****************************************************/
 
-    /**
-     * All calendars
-     */
-    private $calendars;
-
     /* Constructors ***********************************************************/
 
     /**
@@ -41,20 +36,9 @@ class CalendarsModel extends FormUserInputModel
     public function __construct($services, $id, $params, $id_page, $entry_record)
     {
         parent::__construct($services, $id, $params, $id_page, $entry_record);
-        $this->fetch_calendars();
     }
 
     /* Private Methods *********************************************************/
-
-    /**
-     * Fetch calendars from DB
-     * @return array
-     * Return array with the calendars
-     */
-    private function fetch_calendars()
-    {
-        $this->calendars = $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
-    }
 
     /* Public Methods *********************************************************/
 
@@ -65,6 +49,6 @@ class CalendarsModel extends FormUserInputModel
      */
     public function get_calendars()
     {
-        return $this->calendars;
+        return $this->calendars = $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
     }
 }
