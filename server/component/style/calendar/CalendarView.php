@@ -119,7 +119,7 @@ class CalendarView extends FormUserInputView
                 )),
                 new BaseStyleComponent("input", array(
                     "type_input" => "hidden",
-                    "name" => 'delete_record_id',
+                    "name" => DELETE_RECORD_ID,
                     "value" => null,
                 ))
             ),

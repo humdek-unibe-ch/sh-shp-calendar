@@ -69,3 +69,16 @@ INSERT IGNORE INTO `styles` (`name`, `id_type`, id_group, description) VALUES ('
 
 -- add field css to style calendars
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('css'), NULL, 'Allows to assign CSS classes to the root item of the style.');
+
+-- add new field label_delete_calendar
+INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_delete_calendar', get_field_type_id('text'), '1');
+-- add field label_calendar_add_event to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('label_delete_calendar'), 'Delete', 'Label for the calendar delete button');
+
+-- add new field label_calendar
+INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_calendar', get_field_type_id('text'), '1');
+-- add field label_calendar_add_event to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('label_calendar'), 'Calendar', 'Label for the calendar modal form');
+
+-- add field children to style calendars
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (get_style_id('calendars'), get_field_id('children'), 'Children that can be added to the style. It is used to design how the calendars entry form will work. It does not require a form.');

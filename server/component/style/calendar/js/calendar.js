@@ -11,9 +11,6 @@ var calendar;
  */
 $(document).ready(function () {
     initCalendar();
-    setTimeout(() => {
-        test();
-    }, 2000);
 });
 
 /**
@@ -200,8 +197,4 @@ function prepare_events(events, config) {
     });
     console.log(events);
     return events;
-}
-
-function test() {
-    // $('.0000000755').appendTo($('.0000000772:first'));
 }
