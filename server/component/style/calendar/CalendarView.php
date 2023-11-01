@@ -101,8 +101,8 @@ class CalendarView extends FormUserInputView
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
-        $delete_entry = new BaseStyleComponent("form", array(
-            "label" => "Delete",
+        $delete_event = new BaseStyleComponent("form", array(
+            "label" => $this->get_field_value('label_calendar_delete_event'),
             "type" => 'danger',
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => array(
@@ -142,7 +142,7 @@ class CalendarView extends FormUserInputView
             'id' => 'calendar-event',
             'title' => $this->get_field_value('label_calendar_event'),
             'children' => array(
-                $form, $delete_entry
+                $form, $delete_event
             ),
         ));
 
