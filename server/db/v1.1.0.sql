@@ -3,8 +3,7 @@ UPDATE `plugins`
 SET version = 'v1.1.0'
 WHERE `name` = 'calendar';
 
--- Crate new style group
-INSERT IGNORE INTO `styleGroup` (`id`, `name`, `description`, `position`) VALUES (NULL, 'Mobile', 'Styles that are only used by the mobile application', '79');
+
 
 -- add new field label_calendar_add_event
 INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_calendar_add_event', get_field_type_id('text'), '1');
@@ -60,3 +59,10 @@ WHERE id_styles = get_style_id('calendar') AND id_fields = get_field_id('config'
 
 -- add field redirect_at_end to style calendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('redirect_at_end'), '#', 'Redirect to this url once the calendar entry is added');
+
+UPDATE styles
+SET id_group = (SELECT id FROM styleGroup WHERE `name` = 'Form' LIMIT 1)
+WHERE `name` = 'calendar';
+
+-- Add new style calendars
+INSERT IGNORE INTO `styles` (`name`, `id_type`, id_group, description) VALUES ('calendars', '2', (SELECT id FROM styleGroup WHERE `name` = 'Form' LIMIT 1), 'Calendars style. View and add calendars.');

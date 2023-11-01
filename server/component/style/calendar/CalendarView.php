@@ -95,9 +95,9 @@ class CalendarView extends FormUserInputView
     }
 
     /**
-     * render modal form in a card view
+     * render modal form in a card view for the event
      */
-    public function output_modal()
+    public function output_event_modal()
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -148,5 +148,6 @@ class CalendarView extends FormUserInputView
 
         $modal->output_content();
     }
+
 }
 ?>
