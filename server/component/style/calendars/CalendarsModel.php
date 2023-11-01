@@ -17,9 +17,9 @@ class CalendarsModel extends FormUserInputModel
     /* Private Properties *****************************************************/
 
     /**
-     * All events in the calendar
+     * All calendars
      */
-    private $events;
+    private $calendars;
 
     /* Constructors ***********************************************************/
 
@@ -41,36 +41,30 @@ class CalendarsModel extends FormUserInputModel
     public function __construct($services, $id, $params, $id_page, $entry_record)
     {
         parent::__construct($services, $id, $params, $id_page, $entry_record);
-        $this->fetch_events();
+        $this->fetch_calendars();
     }
 
     /* Private Methods *********************************************************/
 
     /**
-     * Fetch events from DB
+     * Fetch calendars from DB
      * @return array
-     * Return array with the events
+     * Return array with the calendars
      */
-    private function fetch_events()
+    private function fetch_calendars()
     {
-        $this->events = $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
-        foreach ($this->events as $key => $event) {
-            foreach ($event as $event_key => $value) {
-                // add all values with _ and they will be added to the extended properties of the calendar
-                $this->events[$key]['_' . $event_key] = $value;
-            }
-        }
+        $this->calendars = $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
     }
 
     /* Public Methods *********************************************************/
 
     /**
-     * Get the events
+     * Get the calendars
      * @return array
-     * Return array with the events
+     * Return array with the calendars
      */
-    public function get_events()
+    public function get_calendars()
     {
-        return $this->events;
+        return $this->calendars;
     }
 }

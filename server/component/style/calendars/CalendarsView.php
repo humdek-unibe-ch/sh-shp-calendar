@@ -86,11 +86,32 @@ class CalendarsView extends FormUserInputView
      */
     public function output_calendars()
     {
+        $calendars = $this->model->get_calendars();
+        $children = array();
+        foreach ($calendars as $key => $value) {
+            $div = new BaseStyleComponent("div", array(
+                "css" => "calendar-row border-bottom mb-1 p-2 d-flex justify-content-between",
+                "children" => array(
+                    new BaseStyleComponent("markdownInline", array(
+                        "css" => "calendar-name",
+                        "text_md_inline" => $value['name']
+                    )),
+                    new BaseStyleComponent("button", array(
+                        "css" => "calendar-edit-btn btn-sm",
+                        "label" => $this->get_field_value('label_edit_calendar'),
+                        "data" => $value,
+                        "url" => "#"
+                    ))
+                )
+            ));
+            $children[] = $div;
+        };
         $calendars_card = new BaseStyleComponent("card", array(
-            "title" => "Calendars",
+            "title" => $this->get_field_value('label_card_title_calendars'),
             "is_expanded" => true,
             "is_collapsible" => false,
-            "url_edit" => "#"
+            "url_edit" => "#",
+            "children" => $children
         ));
         $calendars_card->output_content();
     }

@@ -85,3 +85,18 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (ge
 
 -- add field name to style calendars
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (get_style_id('calendars'), get_field_id('name'), 'The name of the form where the calendars will be stored.');
+
+-- add field is_log to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('calendars'), get_field_id('is_log'), 1, 'This field allows to control how the data is saved in the database:
+ - `disabled`: The submission of data will always overwrite prior submissions of the same user. This means that the user will be able to continously update the data that was submitted here. Any input field that is used within this form will always show the current value stored in the database (if nothing has been submitted as of yet, the input field will be empty or set to a default).
+ - `enabled`: Each submission will create a new entry in the database. Once entered, an entry cannot be removed or modified. Any input field within this form will always be empty or set to a default value (nothing will be read from the database).', 1);
+ 
+ -- add new field label_card_title_calendars
+INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_card_title_calendars', get_field_type_id('text'), '1');
+-- add field label_calendar_add_event to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('label_card_title_calendars'), 'Calendars', 'Label for the card title for the calendars');
+
+ -- add new field label_edit_calendar
+INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_edit_calendar', get_field_type_id('text'), '1');
+-- add field label_edit_calendar to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('label_edit_calendar'), 'Edit', 'Label for the button for editing the calendar');
