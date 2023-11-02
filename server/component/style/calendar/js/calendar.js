@@ -113,7 +113,6 @@ function initCalendar() {
             });
             $('#calendar-event input[name="selected_record_id"]').val(entryValues['_record_id']);
             $('#calendar-event input[name="delete_record_id"]').val(entryValues['_record_id']);
-            console.log(entryValues['_record_id']);
             $('#calendar-event .delete-event-form').removeClass('d-none'); // show delete only if we edit event
             $("#calendar-event").modal();
         },

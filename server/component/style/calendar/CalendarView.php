@@ -103,7 +103,7 @@ class CalendarView extends FormUserInputView
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
         foreach ($children as $key => $value) {
-            if($value->get_view()->style_name == 'calendars'){                
+            if ($value->get_view()->style_name == 'calendars') {
                 $children[$key]->output_content();
                 unset($children[$key]);
             }
@@ -155,6 +155,5 @@ class CalendarView extends FormUserInputView
 
         $modal->output_content();
     }
-
 }
 ?>

@@ -1,15 +1,15 @@
 # SelfHelp plugin - calendar
 
-This is a SelfhelpPlugin that is used for presenting a calendar for the mobile app
+This is a Selfhelp Plugin that is used for presenting a calendar for the mobile app
 
 # Installation
 
  - Download the code into the `plugin` folder
- - Checkout the latest verison 
+ - Checkout the latest version 
  - Execute all `.sql` script in the DB folder in their version order
 
 # Config
- json structure:  
+ - JSON structure:  
  `{
     "css": "class name",
     "events": {
@@ -19,6 +19,7 @@ This is a SelfhelpPlugin that is used for presenting a calendar for the mobile a
         "class_name": "your_class_name_input"
     }
  }`
+ - `show_add_calendar_button` - enable for calendars button. Then a style `calendars` should be loaded on the page
 
 
  Full calendar events properties can be seen [here](https://fullcalendar.io/docs/event-object)
