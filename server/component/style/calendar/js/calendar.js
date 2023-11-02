@@ -64,16 +64,16 @@ function initCalendar() {
         },
         customButtons: buttons['customButtons'],
         eventClick: function (info) {
-            $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
-            $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
-            $('.modal select').selectpicker('deselectAll').selectpicker('render');
-            if ($('.event-form input[name="selected_record_id"]').length === 0) {
+            $('#calendar-event input[type="radio"]').prop('checked', false); //remove all set checked values
+            $('#calendar-event input[type="checkbox"]').prop('checked', false); //remove all set checked values
+            $('#calendar-event select').selectpicker('deselectAll').selectpicker('render');
+            if ($('#calendar-event input[name="selected_record_id"]').length === 0) {
                 // if the selected input record is not added, add it
                 var selectedRecord = $('<input>').attr({
                     type: 'hidden',
                     name: 'selected_record_id',
                 });
-                $('input[name="__form_name"]').after(selectedRecord);
+                $('#calendar-event input[name="__form_name"]').after(selectedRecord);
             }
             if ($('.delete-event-form input[name="delete_record_id"]').length === 0) {
                 // if the delete input record is not added, add it
@@ -81,7 +81,7 @@ function initCalendar() {
                     type: 'hidden',
                     name: 'delete_record_id',
                 });
-                $('input[name="__form_name"]').after(selectedRecord);
+                $('#calendar-event input[name="__form_name"]').after(selectedRecord);
             }
             var entryValues = info.event.extendedProps;
             Object.keys(entryValues).forEach(key => {
@@ -89,16 +89,16 @@ function initCalendar() {
                     // set the value from the event
                     if (entryValues[key]) {
                         var fieldName = key.replace('_', '');
-                        var fieldNameSearch = 'input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
+                        var fieldNameSearch = '#calendar-event input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
                         $(fieldNameSearch).val(entryValues[key]);
                         try {
                             var decodedArray = JSON.parse(entryValues[key].replace(/&quot;/g, '"'));
-                            $('select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);
+                            $('#calendar-event select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);
                         } catch (error) {
 
                         }
                         // Search for radio input and textarea elements
-                        var fieldNameSearchRadioCheck = 'input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
+                        var fieldNameSearchRadioCheck = '#calendar-event input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
                         $(fieldNameSearchRadioCheck).each(function () {
                             if ($(this).is(':radio') || $(this).is(':checkbox')) { // Check if it's a radio input
                                 if ($(this).val() == entryValues[key]) {
@@ -111,10 +111,10 @@ function initCalendar() {
                     }
                 }
             });
-            $('input[name="selected_record_id"]').val(entryValues['_record_id']);
-            $('input[name="delete_record_id"]').val(entryValues['_record_id']);
+            $('#calendar-event input[name="selected_record_id"]').val(entryValues['_record_id']);
+            $('#calendar-event input[name="delete_record_id"]').val(entryValues['_record_id']);
             console.log(entryValues['_record_id']);
-            $('.delete-event-form').removeClass('d-none'); // show delete only if we edit event
+            $('#calendar-event .delete-event-form').removeClass('d-none'); // show delete only if we edit event
             $("#calendar-event").modal();
         },
         eventContent: function (info) {
@@ -138,14 +138,14 @@ function get_custom_buttons(calendar_data) {
             addEventButton: {
                 text: calendar_data['label_calendar_add_event'],
                 click: function () {
-                    $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
-                    $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
-                    $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
-                    $('.modal textarea[type!="hidden"]').val('');
-                    $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
-                    $('input[name="delete_record_id"]').remove(); // remove the delete record if it is there
-                    $('.modal select').selectpicker('deselectAll').selectpicker('render');
-                    $('.delete-event-form').addClass('d-none');
+                    $('#calendar-event input[type="radio"]').prop('checked', false); //remove all set checked values
+                    $('#calendar-event input[type="checkbox"]').prop('checked', false); //remove all set checked values
+                    $('#calendar-event input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
+                    $('#calendar-event textarea[type!="hidden"]').val('');
+                    $('#calendar-event input[name="selected_record_id"]').remove(); // remove the selected record if it is there
+                    $('#calendar-event input[name="delete_record_id"]').remove(); // remove the delete record if it is there
+                    $('#calendar-event select').selectpicker('deselectAll').selectpicker('render');
+                    $('#calendar-event .delete-event-form').addClass('d-none');
                     $("#calendar-event").modal();
                 }
             },
@@ -195,6 +195,5 @@ function prepare_events(events, config) {
         event['overlap'] = "false";
         event['className'] = event['className'] + ' ' + event['record_id'];
     });
-    console.log(events);
     return events;
 }
