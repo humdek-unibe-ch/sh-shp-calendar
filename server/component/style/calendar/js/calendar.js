@@ -132,7 +132,18 @@ function initCalendar() {
     calendar.render();
 }
 
+/**
+ * Prepare the custom buttons
+ * @function
+ * @param {Object} calendar_data - The  calendar data
+ * @returns {Object} - Calendar buttons
+ */
 function get_custom_buttons(calendar_data) {
+    var buttons = 'prev,next,today,addEventButton';
+    if (calendar_data['show_add_calendar_button'] == '1') {
+        // show add calendar btn if enabled
+        buttons = 'prev,next,today,addCalendarButton,addEventButton';
+    }
     var res = {
         'customButtons': {
             addEventButton: {
@@ -152,17 +163,11 @@ function get_custom_buttons(calendar_data) {
             addCalendarButton: {
                 text: calendar_data['label_add_calendar'],
                 click: function () {
-                    $('.modal input[type="radio"]').prop('checked', false); //remove all set checked values
-                    $('.modal input[type="checkbox"]').prop('checked', false); //remove all set checked values
-                    $('.modal input[type!="hidden"]:not([type="radio"]):not([type="checkbox"])').val('');
-                    $('.modal textarea[type!="hidden"]').val('');
-                    $('input[name="selected_record_id"]').remove(); // remove the selected record if it is there
-                    $('.modal select').selectpicker('deselectAll').selectpicker('render');
-                    $("#calendar-event").modal();
+                    addNewCalendar();
                 }
             }
         },
-        'buttons': 'prev,next,today,addCalendarButton,addEventButton'
+        'buttons': buttons
     }
     return res;
 }

@@ -83,6 +83,7 @@ class CalendarView extends FormUserInputView
         $calendar_values['label_day'] = $this->get_field_value('label_day');
         $calendar_values['label_today'] = $this->get_field_value('label_today');
         $calendar_values['config'] = $this->get_field_value('config');
+        $calendar_values['show_add_calendar_button'] = $this->get_field_value('show_add_calendar_button');
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
         require __DIR__ . "/tpl_calendar.php";
         if (
