@@ -100,3 +100,57 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
 INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_edit_calendar', get_field_type_id('text'), '1');
 -- add field label_edit_calendar to style calendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('label_edit_calendar'), 'Edit', 'Label for the button for editing the calendar');
+
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('condition'), NULL, 'The field `condition` allows to specify a condition. Note that the field `condition` is of type `json` and requires\n1. valid json syntax (see https://www.json.org/)\n2. a valid condition structure (see https://github.com/jwadhams/json-logic-php/)\n\nOnly if a condition resolves to true the sections added to the field `children` will be rendered.\n\nIn order to refer to a form-field use the syntax `"@__form_name__#__from_field_name__"` (the quotes are necessary to make it valid json syntax) where `__form_name__` is the value of the field `name` of the style `formUserInput` and `__form_field_name__` is the value of the field `name` of any form-field style.');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('data_config'), '', 
+'In this ***JSON*** field we can configure a data retrieve params from the DB, either `static` or `dynamic` data. Example: 
+ ```
+ [
+	{
+		"type": "static|dynamic",
+		"table": "table_name | #url_param1",
+        "retrieve": "first | last | all",
+		"fields": [
+			{
+				"field_name": "name | #url_param2",
+				"field_holder": "@field_1",
+				"not_found_text": "my field was not found"				
+			}
+		]
+	}
+]
+```
+If the page supports parameters, then the parameter can be accessed with `#` and the name of the parameter. Example `#url_param_name`. 
+
+In order to include the retrieved data in the input `value`, include the `field_holder` that wa defined in the markdown text.
+
+We can access multiple tables by adding another element to the array. The retrieve data from the column can be: `first` entry, `last` entry or `all` entries (concatenated with ;);
+
+`It is used for prefill of the default value`');
+
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('condition'), NULL, 'The field `condition` allows to specify a condition. Note that the field `condition` is of type `json` and requires\n1. valid json syntax (see https://www.json.org/)\n2. a valid condition structure (see https://github.com/jwadhams/json-logic-php/)\n\nOnly if a condition resolves to true the sections added to the field `children` will be rendered.\n\nIn order to refer to a form-field use the syntax `"@__form_name__#__from_field_name__"` (the quotes are necessary to make it valid json syntax) where `__form_name__` is the value of the field `name` of the style `formUserInput` and `__form_field_name__` is the value of the field `name` of any form-field style.');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('data_config'), '', 
+'In this ***JSON*** field we can configure a data retrieve params from the DB, either `static` or `dynamic` data. Example: 
+ ```
+ [
+	{
+		"type": "static|dynamic",
+		"table": "table_name | #url_param1",
+        "retrieve": "first | last | all",
+		"fields": [
+			{
+				"field_name": "name | #url_param2",
+				"field_holder": "@field_1",
+				"not_found_text": "my field was not found"				
+			}
+		]
+	}
+]
+```
+If the page supports parameters, then the parameter can be accessed with `#` and the name of the parameter. Example `#url_param_name`. 
+
+In order to include the retrieved data in the input `value`, include the `field_holder` that wa defined in the markdown text.
+
+We can access multiple tables by adding another element to the array. The retrieve data from the column can be: `first` entry, `last` entry or `all` entries (concatenated with ;);
+
+`It is used for prefill of the default value`');
