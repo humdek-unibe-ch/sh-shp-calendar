@@ -183,6 +183,9 @@ function prepare_events(events, config) {
             }
         }
         event['className'] = event['className'] + ' ' + event['record_id'];
+        if (!event['start']) {
+            event['start'] = event['edit_time'];
+        }
     });
     return events;
 }

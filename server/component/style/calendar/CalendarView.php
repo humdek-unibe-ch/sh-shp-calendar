@@ -81,6 +81,7 @@ class CalendarView extends FormUserInputView
         $calendar_values['label_month'] = $this->get_field_value('label_month');
         $calendar_values['label_week'] = $this->get_field_value('label_week');
         $calendar_values['label_day'] = $this->get_field_value('label_day');
+        $calendar_values['label_list'] = $this->get_field_value('label_list');
         $calendar_values['label_today'] = $this->get_field_value('label_today');
         $calendar_values['config'] = $this->get_field_value('config');
         $calendar_values['show_add_calendar_button'] = $this->get_field_value('show_add_calendar_button');
