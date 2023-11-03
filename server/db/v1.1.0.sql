@@ -210,3 +210,9 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('selectCalendar'), get_field_id('items'), NULL, 'The value is set by the system automatically!', 1);
 -- add field is_required to style selectCalendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('is_required'),0 , 'If enabled the form can only be submitted if a value is entered in this input field.');
+-- add field items to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('selectCalendar'), get_field_id('items'), NULL, 'The value is set by the system automatically!', 1);
+-- add field allow_clear to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('allow_clear'), 0, 'If checked the select value can be cleared once set');
+-- add field live_search to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('live_search'), 0, 'If checked the select component will have a live search text box which can filter the values');
