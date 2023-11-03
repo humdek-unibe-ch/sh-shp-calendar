@@ -65,48 +65,50 @@ function initCalendar() {
         customButtons: buttons['customButtons'],
         eventClick: function (info) {
             var entryValues = info.event.extendedProps;
+            $('#calendar-event-edit-mode input[type="radio"]').prop('checked', false); //remove all set checked values
+            $('#calendar-event-edit-mode input[type="checkbox"]').prop('checked', false); //remove all set checked values
+            $('#calendar-event-edit-mode select').selectpicker('deselectAll').selectpicker('render');
             Object.keys(entryValues).forEach(key => {
                 if (key.startsWith("_")) {
                     // set the value from the event
-                    if (entryValues[key]) {
-                        var fieldName = key.replace('_', '');
-                        var fieldNameSearch = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
-                        $(fieldNameSearch).val(entryValues[key]);
-                        try {
-                            var decodedArray = JSON.parse(entryValues[key].replace(/&quot;/g, '"'));
-                            $('#calendar-event-edit-mode select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);
-                        } catch (error) {
+                    var fieldName = key.replace('_', '');
+                    var fieldNameSearch = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
+                    $(fieldNameSearch).val(entryValues[key]);
+                    $('#calendar-event-edit-mode select[name^="' + fieldName + '[value]"]').selectpicker('val', entryValues[key]);
+                    try {
+                        var decodedArray = JSON.parse(entryValues[key].replace(/&quot;/g, '"'));
+                        $('#calendar-event-edit-mode select[name^="' + fieldName + '[value]"]').selectpicker('val', decodedArray);
+                    } catch (error) {
 
-                        }
-                        // Search for radio input and textarea elements
-                        var fieldNameSearchRadioCheck = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
-                        $(fieldNameSearchRadioCheck).each(function () {
-                            if ($(this).is(':radio') || $(this).is(':checkbox')) { // Check if it's a radio input
-                                if ($(this).val() == entryValues[key]) {
-                                    $(this).prop('checked', true); // Set the "checked" property to true
-                                }
-                            } else { // It's a textarea element
-                                $(this).val(entryValues[key]); // Set the value for textarea elements
-                            }
-                        });
                     }
+                    // Search for radio input and textarea elements
+                    var fieldNameSearchRadioCheck = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
+                    $(fieldNameSearchRadioCheck).each(function () {
+                        if ($(this).is(':radio') || $(this).is(':checkbox')) { // Check if it's a radio or check input
+                            if ($(this).val() == entryValues[key]) {
+                                $(this).prop('checked', true); // Set the "checked" property to true
+                            }
+                        } else { // It's a textarea element
+                            $(this).val(entryValues[key]); // Set the value for textarea elements
+                        }
+                    });
                 }
             });
             $('#calendar-event-edit-mode input[name="selected_record_id"]').val(entryValues['_record_id']);
             $('#calendar-event-edit-mode input[name="delete_record_id"]').val(entryValues['_record_id']);
             $("#calendar-event-edit-mode").modal();
         },
-        eventContent: function (info) {
-            var dot = document.createElement('div');
-            $(dot).addClass('fc-daygrid-event-dot');
-            var time = document.createElement('div');
-            $(time).addClass('fc-event-time');
-            time.innerHTML = info.event.start.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false }) + " <span>[" + info.event.extendedProps.type_code + "]</span>";
-            var title = document.createElement('div');
-            $(title).addClass('fc-event-title');
-            title.innerHTML = info.event.title;
-            return { domNodes: [dot, time, title] }
-        },
+        // eventContent: function (info) {
+        //     var dot = document.createElement('div');
+        //     $(dot).addClass('fc-daygrid-event-dot');
+        //     var time = document.createElement('div');
+        //     $(time).addClass('fc-event-time');
+        //     time.innerHTML = info.event.start.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false }) + " <span>[" + info.event.extendedProps.type_code + "]</span>";
+        //     var title = document.createElement('div');
+        //     $(title).addClass('fc-event-title');
+        //     title.innerHTML = info.event.title;
+        //     return { domNodes: [dot, time, title] }
+        // },
     });
     calendar.render();
 }
@@ -127,7 +129,7 @@ function get_custom_buttons(calendar_data) {
         'customButtons': {
             addEventButton: {
                 text: calendar_data['label_calendar_add_event'],
-                click: function () {                    
+                click: function () {
                     $("#calendar-event-add-mode").modal();
                 }
             },
@@ -168,7 +170,6 @@ function prepare_events(events, config) {
             // there is a global css for the event object
             event['className'] = event['className'] + ' ' + config['css'];
         }
-        event['overlap'] = "false";
         event['className'] = event['className'] + ' ' + event['record_id'];
     });
     return events;

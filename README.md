@@ -16,6 +16,7 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
         "title": "your_title_input_name",
         "description": "your_description_input_name",
         "start": "your_start_date_input",
+        "end": "your_end_date_input",
         "class_name": "your_class_name_input"
     }
  }`
