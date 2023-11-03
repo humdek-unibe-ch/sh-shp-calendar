@@ -166,3 +166,47 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
 INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'calendar_source', get_field_type_id('text'), '0');
 -- add field calendar_source to style calendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (get_style_id('calendar'), get_field_id('calendar_source'), 'The name of the form from where the calendars list will be loaded. If it is empty the events cannot be assign to a calendar.');
+
+-- Add new style selectCalendar
+INSERT IGNORE INTO `styles` (`name`, `id_type`, id_group, description) VALUES ('selectCalendar', '2', (SELECT id FROM styleGroup WHERE `name` = 'Input' LIMIT 1), 'Expand select style and load calendar list for calendar selection');
+
+-- add field css to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('css'), NULL, 'Allows to assign CSS classes to the root item of the style.');
+-- add field css_mobile
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('css_mobile'), NULL, 'Allows to assign CSS classes to the root item of the style for the mobile version.');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('condition'), NULL, 'The field `condition` allows to specify a condition. Note that the field `condition` is of type `json` and requires\n1. valid json syntax (see https://www.json.org/)\n2. a valid condition structure (see https://github.com/jwadhams/json-logic-php/)\n\nOnly if a condition resolves to true the sections added to the field `children` will be rendered.\n\nIn order to refer to a form-field use the syntax `"@__form_name__#__from_field_name__"` (the quotes are necessary to make it valid json syntax) where `__form_name__` is the value of the field `name` of the style `formUserInput` and `__form_field_name__` is the value of the field `name` of any form-field style.');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('data_config'), '', 
+'In this ***JSON*** field we can configure a data retrieve params from the DB, either `static` or `dynamic` data. Example: 
+ ```
+ [
+	{
+		"type": "static|dynamic",
+		"table": "table_name | #url_param1",
+        "retrieve": "first | last | all",
+		"fields": [
+			{
+				"field_name": "name | #url_param2",
+				"field_holder": "@field_1",
+				"not_found_text": "my field was not found"				
+			}
+		]
+	}
+]
+```
+If the page supports parameters, then the parameter can be accessed with `#` and the name of the parameter. Example `#url_param_name`. 
+
+In order to include the retrieved data in the input `value`, include the `field_holder` that wa defined in the markdown text.
+
+We can access multiple tables by adding another element to the array. The retrieve data from the column can be: `first` entry, `last` entry or `all` entries (concatenated with ;);
+
+`It is used for prefill of the default value`');
+
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`)  VALUES (get_style_id('selectCalendar'), get_field_id('label'), '', 'Label for the select');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`)  VALUES (get_style_id('selectCalendar'), get_field_id('formName'), '', 'Select the form from where the calendars will be loaded.');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('own_entries_only'), '1', 'If enabled the select list will load only the calendars entered by the user.');
+-- add field name to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('name'),'calendar', 'The input name where the selected calendar will be stored');
+-- add field items to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('selectCalendar'), get_field_id('items'), NULL, 'The value is set by the system automatically!', 1);
+-- add field is_required to style selectCalendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('is_required'),0 , 'If enabled the form can only be submitted if a value is entered in this input field.');

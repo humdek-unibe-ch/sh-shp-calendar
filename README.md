@@ -9,7 +9,7 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
  - Execute all `.sql` script in the DB folder in their version order
 
 # Config
- - JSON structure:  
+ - JSON structure for `calendar`:  
  `{
     "css": "class name",
     "events": {
@@ -20,6 +20,7 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
     }
  }`
  - `show_add_calendar_button` - enable for calendars button. Then a style `calendars` should be loaded on the page
+ - style `calendars` requires input with name `calendar_name`
 
 
  Full calendar events properties can be seen [here](https://fullcalendar.io/docs/event-object)
