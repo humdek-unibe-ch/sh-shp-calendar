@@ -65,6 +65,7 @@ function initCalendar() {
         customButtons: buttons['customButtons'],
         eventClick: function (info) {
             var entryValues = info.event.extendedProps;
+            console.log(entryValues);
             $('#calendar-event-edit-mode input[type="radio"]').prop('checked', false); //remove all set checked values
             $('#calendar-event-edit-mode input[type="checkbox"]').prop('checked', false); //remove all set checked values
             $('#calendar-event-edit-mode select').selectpicker('deselectAll').selectpicker('render');
@@ -170,7 +171,63 @@ function prepare_events(events, config) {
             // there is a global css for the event object
             event['className'] = event['className'] + ' ' + config['css'];
         }
+        if (config['form_calendars']) {
+            // there is calendars setup, check for colors
+            if (event['calendar_info'] && event['calendar_info']['color']) {
+                event['backgroundColor'] = event['calendar_info']['color'];
+                event['borderColor'] = event['calendar_info']['color'];
+                if (isColorLight(event['calendar_info']['color'])) {
+                    event['textColor'] = "black";
+                    event['borderColor'] = "black";
+                }
+            }
+        }
         event['className'] = event['className'] + ' ' + event['record_id'];
     });
     return events;
+}
+
+/**
+ * Check if the color is light
+ * @function
+ * @param {String} color - The color code
+ * @returns {Boolean} - True if light color
+ */
+function isColorLight(color) {
+    // Remove any whitespace and convert to lowercase for consistent formatting
+    color = color.replace(/\s/g, '').toLowerCase();
+
+    // Check if the color starts with '#' (hexadecimal notation)
+    if (color.charAt(0) === '#') {
+        // Extract the hex values for red, green, and blue
+        const r = parseInt(color.slice(1, 3), 16);
+        const g = parseInt(color.slice(3, 5), 16);
+        const b = parseInt(color.slice(5, 7), 16);
+
+        // Calculate the perceived brightness using the YIQ formula
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+        // You can adjust this threshold to your preference (e.g., 128 for a mid-level threshold)
+        return brightness > 128;
+    }
+
+    // Check if the color starts with 'rgb' (RGB notation)
+    if (color.startsWith('rgb(')) {
+        // Extract the RGB values using regular expressions
+        const rgb = color.match(/\d+/g);
+        if (rgb && rgb.length === 3) {
+            const r = parseInt(rgb[0]);
+            const g = parseInt(rgb[1]);
+            const b = parseInt(rgb[2]);
+
+            // Calculate the perceived brightness using the YIQ formula
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+            // You can adjust this threshold to your preference (e.g., 128 for a mid-level threshold)
+            return brightness > 128;
+        }
+    }
+
+    // If the color format is not recognized, assume it's not light
+    return false;
 }
