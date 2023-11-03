@@ -5,5 +5,6 @@
 ?>
 <div id="calendar-holder">
     <div id="calendar-view" class="<?php echo $this->css; ?>" data-data='<?php echo json_encode($calendar_values); ?>' data-events="<?php echo htmlspecialchars(json_encode($this->model->get_events()), ENT_QUOTES, 'UTF-8'); ?>"> </div>
-    <?php $this->output_event_modal(); ?>
+    <?php $this->output_edit_event_modal(); ?>
+    <?php $this->output_add_event_modal(); ?>
 </div>

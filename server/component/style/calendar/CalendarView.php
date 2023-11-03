@@ -96,9 +96,9 @@ class CalendarView extends FormUserInputView
     }
 
     /**
-     * render modal form in a card view for the event
+     * render modal form in a card view for the edit event
      */
-    public function output_event_modal()
+    public function output_edit_event_modal()
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -146,10 +146,47 @@ class CalendarView extends FormUserInputView
             "id" => $this->id_section,
         ));
         $modal = new BaseStyleComponent('modal', array(
-            'id' => 'calendar-event',
+            'id' => 'calendar-event-edit-mode',
             'title' => $this->get_field_value('label_calendar_event'),
             'children' => array(
                 $form, $delete_event
+            ),
+        ));
+
+        $modal->output_content();
+    }
+
+    /**
+     * render modal form in a card view for the add event
+     */
+    public function output_add_event_modal()
+    {
+        $this->propagate_input_field_settings($this->form_children, false);
+        $children = $this->form_children;
+        foreach ($children as $key => $value) {
+            if ($value->get_view()->style_name == 'calendars') {
+                $children[$key]->output_content();
+                unset($children[$key]);
+            }
+        }
+        $children[] = new BaseStyleComponent("input", array(
+            "type_input" => "hidden",
+            "name" => "__form_name",
+            "value" => htmlentities($this->name),
+        ));
+        $form = new BaseStyleComponent("form", array(
+            "label" => "Save",
+            "type" => $this->type,
+            "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
+            "children" => $children,
+            "css" => "event-form",
+            "id" => $this->id_section,
+        ));
+        $modal = new BaseStyleComponent('modal', array(
+            'id' => 'calendar-event-add-mode',
+            'title' => $this->get_field_value('label_calendar_event'),
+            'children' => array(
+                $form
             ),
         ));
 
