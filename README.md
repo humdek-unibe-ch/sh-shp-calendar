@@ -9,6 +9,7 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
  - Execute all `.sql` script in the DB folder in their version order
 
 # Config
+ - when adding `end` date use datetime [info](https://fullcalendar.io/docs/event-object)
  - JSON structure for `calendar`:  
  `{
     "css": "class name",
