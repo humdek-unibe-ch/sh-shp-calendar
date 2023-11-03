@@ -69,6 +69,7 @@ INSERT IGNORE INTO `styles` (`name`, `id_type`, id_group, description) VALUES ('
 
 -- add field css to style calendars
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('css'), NULL, 'Allows to assign CSS classes to the root item of the style.');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendars'), get_field_id('css_mobile'), NULL, 'Allows to assign CSS classes to the root item of the style for the mobile version.');
 
 -- add new field label_delete_calendar
 INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_delete_calendar', get_field_type_id('text'), '1');
@@ -161,11 +162,6 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
  -- add new field show_add_calendar_button
 INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'show_add_calendar_button', get_field_type_id('checkbox'), '0');
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('show_add_calendar_button'), 0, 'If *checked*, it will show the button for add calendar. It requires style `calendars` to be loaded on the same page.');
-
- -- add new field calendar_source
-INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'calendar_source', get_field_type_id('text'), '0');
--- add field calendar_source to style calendar
-INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `help`) VALUES (get_style_id('calendar'), get_field_id('calendar_source'), 'The name of the form from where the calendars list will be loaded. If it is empty the events cannot be assign to a calendar.');
 
 -- Add new style selectCalendar
 INSERT IGNORE INTO `styles` (`name`, `id_type`, id_group, description) VALUES ('selectCalendar', '2', (SELECT id FROM styleGroup WHERE `name` = 'Input' LIMIT 1), 'Expand select style and load calendar list for calendar selection');

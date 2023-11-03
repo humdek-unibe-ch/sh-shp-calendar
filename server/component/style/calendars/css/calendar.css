@@ -3,3 +3,8 @@
     -webkit-transform: translate(0, -100%);
     right: 1rem;
 }
+
+.calendar-color-circle {
+    width: 15px;
+    height: 15px;
+}

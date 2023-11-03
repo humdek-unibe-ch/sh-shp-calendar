@@ -89,13 +89,28 @@ class CalendarsView extends FormUserInputView
         $calendars = $this->model->get_calendars();
         $children = array();
         foreach ($calendars as $key => $value) {
+            $calendar_title = new BaseStyleComponent("markdownInline", array(
+                "css" => "calendar-name",
+                "text_md_inline" => isset($value['calendar_name']) ? $value['calendar_name'] : 'Please use input with name `calendar_name`'
+            ));
+            $calendar_info_children = array();
+            if ($value['color']) {
+                $calendar_info_children[] = new BaseStyleComponent("template", array(
+                    "path" => __DIR__ . "/tpl_color.php",
+                    "items" => array(
+                        "color" => $value['color']
+                    )
+                ));
+            }
+            $calendar_info_children[] = $calendar_title;
+            $calendar_info = new BaseStyleComponent("div", array(
+                "css" => "d-flex align-items-center",
+                "children" => $calendar_info_children
+            ));
             $div = new BaseStyleComponent("div", array(
                 "css" => "calendar-row border-bottom mb-1 p-2 d-flex justify-content-between",
                 "children" => array(
-                    new BaseStyleComponent("markdownInline", array(
-                        "css" => "calendar-name",
-                        "text_md_inline" => isset($value['calendar_name']) ? $value['calendar_name'] : 'Please use input with name `calendar_name`'
-                    )),
+                    $calendar_info,
                     new BaseStyleComponent("button", array(
                         "css" => "calendar-edit-btn btn-sm",
                         "label" => $this->get_field_value('label_edit_calendar'),
