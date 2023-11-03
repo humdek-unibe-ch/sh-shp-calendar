@@ -205,7 +205,7 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`)  VALUES (get_style_id('selectCalendar'), get_field_id('formName'), '', 'Select the form from where the calendars will be loaded.');
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('own_entries_only'), '1', 'If enabled the select list will load only the calendars entered by the user.');
 -- add field name to style selectCalendar
-INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('name'),'calendar', 'The input name where the selected calendar will be stored');
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('selectCalendar'), get_field_id('name'),'calendar', 'The input name where the selected calendar will be stored. It is set by default to `calendar`', 1);
 -- add field items to style selectCalendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('selectCalendar'), get_field_id('items'), NULL, 'The value is set by the system automatically!', 1);
 -- add field is_required to style selectCalendar
