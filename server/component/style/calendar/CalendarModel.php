@@ -54,10 +54,29 @@ class CalendarModel extends FormUserInputModel
     private function fetch_events()
     {
         $this->events = $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
+        $calendars = array();
+        $config = $this->get_db_field('config');
+        if (isset($config['form_calendars'])) {
+            $form_calendars = $config['form_calendars'];
+            $form_id = $this->user_input->get_form_id($form_calendars);
+            if ($form_id) {
+                $calendars = $this->user_input->get_data($form_id, 'AND deleted = 0');
+            }
+        }
+
         foreach ($this->events as $key => $event) {
             foreach ($event as $event_key => $value) {
                 // add all values with _ and they will be added to the extended properties of the calendar
                 $this->events[$key]['_' . $event_key] = $value;
+                if ($event_key == 'calendar' && $value) {
+                    foreach ($calendars as $item) {
+                        if (isset($item['record_id']) && $item['record_id'] == $value) {
+                            // Found the matching item
+                            $this->events[$key]['calendar_info'] = $item;
+                            break; // Exit the loop since we found the item
+                        }
+                    }
+                }
             }
         }
     }
