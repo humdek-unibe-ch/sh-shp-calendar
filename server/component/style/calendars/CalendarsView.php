@@ -112,7 +112,7 @@ class CalendarsView extends FormUserInputView
                 "children" => array(
                     $calendar_info,
                     new BaseStyleComponent("button", array(
-                        "css" => "calendar-edit-btn btn-sm",
+                        "css" => "calendar-edit-btn btn-sm ml-3",
                         "label" => $this->get_field_value('label_edit_calendar'),
                         "data" => $value,
                         "url" => "#"

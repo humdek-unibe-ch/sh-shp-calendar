@@ -75,6 +75,13 @@ class CalendarView extends FormUserInputView
      */
     public function output_content()
     {
+        if (
+            method_exists($this->model, "is_cms_page") && $this->model->is_cms_page() &&
+            method_exists($this->model, "is_cms_page_editing") && $this->model->is_cms_page_editing()
+        ) {
+            // show the children in edit mode only. 
+            $this->output_children();
+        }
         $calendar_values = [];
         $calendar_values['label_calendar_add_event'] = $this->get_field_value('label_calendar_add_event');
         $calendar_values['label_add_calendar'] = $this->get_field_value('label_add_calendar');
@@ -86,14 +93,7 @@ class CalendarView extends FormUserInputView
         $calendar_values['config'] = $this->get_field_value('config');
         $calendar_values['show_add_calendar_button'] = $this->get_field_value('show_add_calendar_button');
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
-        require __DIR__ . "/tpl_calendar.php";
-        if (
-            method_exists($this->model, "is_cms_page") && $this->model->is_cms_page() &&
-            method_exists($this->model, "is_cms_page_editing") && $this->model->is_cms_page_editing()
-        ) {
-            // show the children in edit mode only. 
-            $this->output_children();
-        }
+        require __DIR__ . "/tpl_calendar.php";        
     }
 
     /**
