@@ -171,7 +171,6 @@ function prepare_events(events, config) {
             event['className'] = [];
         } else {
             event['className'] = [event['className']];
-            console.log(event['className']);
         }
         if (config['css']) {
             // there is a global css for the event object
@@ -191,6 +190,15 @@ function prepare_events(events, config) {
         event['className'].push(event['record_id']);
         if (!event['start']) {
             event['start'] = event['edit_time'];
+        }
+        if (event['end']) {
+            timePattern = /\d{2} \d{2}/;
+            if (!timePattern.test(event['end'])) {
+                // there is no time add extra date because the end date is exclusive
+                parsedDate = moment(event['end'], 'YYYY-MM-DD');
+                updatedDate = parsedDate.add(1, 'days');
+                event['end'] = updatedDate.format('YYYY-MM-DD');
+            }
         }
     });
     return events;
