@@ -73,7 +73,7 @@ function initCalendar() {
                 if (key.startsWith("_")) {
                     // set the value from the event
                     var fieldName = key.replace('_', '');
-                    var fieldNameSearch = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), textarea[name="' + fieldName + '[value]"]';
+                    var fieldNameSearch = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"]:not([type="radio"]):not([type="checkbox"]):not([type="select"]), #calendar-event-edit-mode textarea[name="' + fieldName + '[value]"]';
                     $(fieldNameSearch).val(entryValues[key]);
                     $('#calendar-event-edit-mode select[name^="' + fieldName + '[value]"]').selectpicker('val', entryValues[key]);
                     try {
@@ -83,7 +83,7 @@ function initCalendar() {
 
                     }
                     // Search for radio input and textarea elements
-                    var fieldNameSearchRadioCheck = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"][type="radio"], input[name="' + fieldName + '[value]"][type="checkbox"]';
+                    var fieldNameSearchRadioCheck = '#calendar-event-edit-mode input[name="' + fieldName + '[value]"][type="radio"], #calendar-event-edit-mode input[name="' + fieldName + '[value]"][type="checkbox"]';
                     $(fieldNameSearchRadioCheck).each(function () {
                         if ($(this).is(':radio') || $(this).is(':checkbox')) { // Check if it's a radio or check input
                             if ($(this).val() == entryValues[key]) {
