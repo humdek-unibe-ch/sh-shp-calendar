@@ -167,9 +167,15 @@ function prepare_events(events, config) {
                 }
             });
         }
+        if (!event['className']) {
+            event['className'] = [];
+        } else {
+            event['className'] = [event['className']];
+            console.log(event['className']);
+        }
         if (config['css']) {
             // there is a global css for the event object
-            event['className'] = event['className'] + ' ' + config['css'];
+            event['className'].push(config['css']);
         }
         if (config['form_calendars']) {
             // there is calendars setup, check for colors
@@ -182,7 +188,7 @@ function prepare_events(events, config) {
                 }
             }
         }
-        event['className'] = event['className'] + ' ' + event['record_id'];
+        event['className'].push(event['record_id']);
         if (!event['start']) {
             event['start'] = event['edit_time'];
         }
