@@ -112,6 +112,7 @@ class CalendarView extends FormUserInputView
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
         $style['calendar_values'] = $calendar_values;
         $style['events'] = $this->model->get_events();
+        $style['style_add_event'] = $this->output_add_event_modal(true);
         return $style;
     }
 
@@ -179,7 +180,7 @@ class CalendarView extends FormUserInputView
     /**
      * render modal form in a card view for the add event
      */
-    public function output_add_event_modal()
+    public function output_add_event_modal($mobile = false)
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -210,7 +211,11 @@ class CalendarView extends FormUserInputView
             ),
         ));
 
-        $modal->output_content();
+        if ($mobile) {
+            return $modal->output_content_mobile();
+        } else {
+            $modal->output_content();
+        }
     }
 }
 ?>
