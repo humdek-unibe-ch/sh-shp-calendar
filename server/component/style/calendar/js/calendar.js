@@ -192,11 +192,11 @@ function prepare_events(events, config) {
             event['start'] = event['edit_time'];
         }
         if (event['end']) {
-            timePattern = /\d{2} \d{2}/;
+            var timePattern = /\d{2} \d{2}/;
             if (!timePattern.test(event['end'])) {
                 // there is no time add extra date because the end date is exclusive
-                parsedDate = moment(event['end'], 'YYYY-MM-DD');
-                updatedDate = parsedDate.add(1, 'days');
+                var parsedDate = moment(event['end'], 'YYYY-MM-DD');
+                var updatedDate = parsedDate.add(1, 'days');
                 event['end'] = updatedDate.format('YYYY-MM-DD');
             }
         }

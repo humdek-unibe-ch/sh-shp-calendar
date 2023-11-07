@@ -93,7 +93,26 @@ class CalendarView extends FormUserInputView
         $calendar_values['config'] = $this->get_field_value('config');
         $calendar_values['show_add_calendar_button'] = $this->get_field_value('show_add_calendar_button');
         $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
-        require __DIR__ . "/tpl_calendar.php";        
+        require __DIR__ . "/tpl_calendar.php";
+    }
+
+    public function output_content_mobile()
+    {
+        $style = parent::output_content_mobile();
+        $calendar_values = [];
+        $calendar_values['label_calendar_add_event'] = $this->get_field_value('label_calendar_add_event');
+        $calendar_values['label_add_calendar'] = $this->get_field_value('label_add_calendar');
+        $calendar_values['label_month'] = $this->get_field_value('label_month');
+        $calendar_values['label_week'] = $this->get_field_value('label_week');
+        $calendar_values['label_day'] = $this->get_field_value('label_day');
+        $calendar_values['label_list'] = $this->get_field_value('label_list');
+        $calendar_values['label_today'] = $this->get_field_value('label_today');
+        $calendar_values['config'] = $this->get_field_value('config');
+        $calendar_values['show_add_calendar_button'] = $this->get_field_value('show_add_calendar_button');
+        $calendar_values['locale'] = isset($_SESSION['user_language_locale']) ? substr($_SESSION['user_language_locale'], 0, 2) : 'de';
+        $style['calendar_values'] = $calendar_values;
+        $style['events'] = $this->model->get_events();
+        return $style;
     }
 
     /**
