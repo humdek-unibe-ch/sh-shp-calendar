@@ -30,6 +30,16 @@ INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, '
 -- add field label_calendar_add_event to style calendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('label_today'), 'Today', 'Label for the button to reset the calendat view to `today`');
 
+-- add new field label_add_event
+INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_add_event', get_field_type_id('text'), '1');
+-- add field label_calendar_add_event to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('label_add_event'), 'Add', 'Label for adding new event');
+
+-- add new field label_edit_event
+INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_edit_event', get_field_type_id('text'), '1');
+-- add field label_calendar_add_event to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('calendar'), get_field_id('label_edit_event'), 'Edit', 'Label for editing an exisitng event');
+
 -- add new field label_calendar_event
 INSERT IGNORE INTO `fields` (`id`, `name`, `id_type`, `display`) VALUES (NULL, 'label_calendar_event', get_field_type_id('text'), '1');
 -- add field label_calendar_add_event to style calendar

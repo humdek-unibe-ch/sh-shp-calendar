@@ -159,7 +159,7 @@ class CalendarView extends FormUserInputView
             "value" => null,
         ));
         $form = new BaseStyleComponent("form", array(
-            "label" => "Save",
+            "label" => $this->get_field_value('label_edit_event'),
             "type" => $this->type,
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => $children,
@@ -196,7 +196,7 @@ class CalendarView extends FormUserInputView
             "value" => htmlentities($this->name),
         ));
         $form = new BaseStyleComponent("form", array(
-            "label" => "Save",
+            "label" => $this->get_field_value('label_add_event'),
             "type" => $this->type,
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => $children,
