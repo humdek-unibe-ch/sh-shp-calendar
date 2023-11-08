@@ -210,6 +210,7 @@ class CalendarView extends FormUserInputView
             "children" => $children,
             "css" => "event-form",
             "id" => $this->id_section,
+            "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
             "name" => htmlentities($this->name)
         ));
         $modal = new BaseStyleComponent('modal', array(

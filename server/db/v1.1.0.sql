@@ -222,3 +222,7 @@ INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('allow_clear'), 0, 'If checked the select value can be cleared once set');
 -- add field live_search to style selectCalendar
 INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`) VALUES (get_style_id('selectCalendar'), get_field_id('live_search'), 0, 'If checked the select component will have a live search text box which can filter the values');
+-- add field close_modal_at_end to style calendar
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('calendar'), get_field_id('close_modal_at_end'), 1, '`Only for mobile` - if selected the modal form will be closed once the survey is done', 1);
+-- add field close_modal_at_end to style calendars
+INSERT IGNORE INTO `styles_fields` (`id_styles`, `id_fields`, `default_value`, `help`, `hidden`) VALUES (get_style_id('calendars'), get_field_id('close_modal_at_end'), 1, '`Only for mobile` - if selected the modal form will be closed once the survey is done', 1);
