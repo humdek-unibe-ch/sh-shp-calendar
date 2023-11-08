@@ -149,12 +149,14 @@ class CalendarView extends FormUserInputView
             "css" => "delete-event-form",
             "id" => $this->id_section,
         ));
-        $children[] = new BaseStyleComponent("input", array(
-            "type_input" => "hidden",
-            "name" => "__form_name",
-            "is_required" => true,
-            "value" => htmlentities($this->name),
-        ));
+        if (!$mobile) {
+            $children[] = new BaseStyleComponent("input", array(
+                "type_input" => "hidden",
+                "name" => "__form_name",
+                "is_required" => true,
+                "value" => htmlentities($this->name),
+            ));
+        }
         $children[] = new BaseStyleComponent("input", array(
             "type_input" => "hidden",
             "name" => SELECTED_RECORD_ID,
@@ -197,12 +199,14 @@ class CalendarView extends FormUserInputView
                 unset($children[$key]);
             }
         }
-        $children[] = new BaseStyleComponent("input", array(
-            "type_input" => "hidden",
-            "name" => "__form_name",
-            "is_required" => true,
-            "value" => htmlentities($this->name),
-        ));
+        if (!$mobile) {
+            $children[] = new BaseStyleComponent("input", array(
+                "type_input" => "hidden",
+                "name" => "__form_name",
+                "is_required" => true,
+                "value" => htmlentities($this->name),
+            ));
+        }
         $form = new BaseStyleComponent("form", array(
             "label" => $this->get_field_value('label_add_event'),
             "type" => $this->type,
