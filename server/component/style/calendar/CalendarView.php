@@ -113,13 +113,14 @@ class CalendarView extends FormUserInputView
         $style['calendar_values'] = $calendar_values;
         $style['events'] = $this->model->get_events();
         $style['style_add_event'] = $this->output_add_event_modal(true);
+        $style['style_edit_event'] = $this->output_edit_event_modal(true);
         return $style;
     }
 
     /**
      * render modal form in a card view for the edit event
      */
-    public function output_edit_event_modal()
+    public function output_edit_event_modal($mobile = false)
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -151,6 +152,7 @@ class CalendarView extends FormUserInputView
         $children[] = new BaseStyleComponent("input", array(
             "type_input" => "hidden",
             "name" => "__form_name",
+            "is_required" => true,
             "value" => htmlentities($this->name),
         ));
         $children[] = new BaseStyleComponent("input", array(
@@ -165,6 +167,7 @@ class CalendarView extends FormUserInputView
             "children" => $children,
             "css" => "event-form",
             "id" => $this->id_section,
+            "name" => htmlentities($this->name)
         ));
         $modal = new BaseStyleComponent('modal', array(
             'id' => 'calendar-event-edit-mode',
@@ -174,7 +177,11 @@ class CalendarView extends FormUserInputView
             ),
         ));
 
-        $modal->output_content();
+        if ($mobile) {
+            return $modal->output_content_mobile();
+        } else {
+            $modal->output_content();
+        }
     }
 
     /**
@@ -193,6 +200,7 @@ class CalendarView extends FormUserInputView
         $children[] = new BaseStyleComponent("input", array(
             "type_input" => "hidden",
             "name" => "__form_name",
+            "is_required" => true,
             "value" => htmlentities($this->name),
         ));
         $form = new BaseStyleComponent("form", array(
@@ -202,6 +210,7 @@ class CalendarView extends FormUserInputView
             "children" => $children,
             "css" => "event-form",
             "id" => $this->id_section,
+            "name" => htmlentities($this->name)
         ));
         $modal = new BaseStyleComponent('modal', array(
             'id' => 'calendar-event-add-mode',
