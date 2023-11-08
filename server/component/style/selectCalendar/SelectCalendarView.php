@@ -31,6 +31,12 @@ class SelectCalendarView extends SelectView
 
     /* Public Methods ********************************************************/
 
-    
+    public function output_content_mobile()
+    {
+        $style = parent::output_content_mobile();
+        $style['style_name'] = 'select';
+        $style['disabled']['content'] = 0;
+        return $style;
+    }
 }
 ?>
