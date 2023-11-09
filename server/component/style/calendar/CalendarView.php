@@ -147,7 +147,7 @@ class CalendarView extends FormUserInputView
                 ))
             ),
             "css" => "delete-event-form",
-            "id" => $this->id_section,
+            "id" => $this->id_section
         ));
         if (!$mobile) {
             $children[] = new BaseStyleComponent("input", array(
@@ -169,7 +169,8 @@ class CalendarView extends FormUserInputView
             "children" => $children,
             "css" => "event-form",
             "id" => $this->id_section,
-            "name" => htmlentities($this->name)
+            "name" => htmlentities($this->name),
+            "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
         ));
         $modal = new BaseStyleComponent('modal', array(
             'id' => 'calendar-event-edit-mode',
