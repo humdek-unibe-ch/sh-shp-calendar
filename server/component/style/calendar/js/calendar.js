@@ -53,7 +53,7 @@ function initCalendar() {
         weekNumberFormat: {
             week: 'long'
         },
-        height: 'auto',
+        height: calendar_data['config']['height'] ? calendar_data['config']['height'] : 'auto',
         firstDay: 1,
         events: prepare_events(events, calendar_data['config']),
         eventDidMount: function (info) {

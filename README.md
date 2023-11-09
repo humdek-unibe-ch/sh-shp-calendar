@@ -13,6 +13,7 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
  - JSON structure for `calendar`:  
  `{
     "css": "class name",
+    "height": "auto",
     "form_calendars": "form_name_for_calendars", //if you want to take the coloring from the calendar you need a field `color` in the calendar entry
     "events": {
         "title": "your_title_input_name",
