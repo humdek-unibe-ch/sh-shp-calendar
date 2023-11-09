@@ -147,6 +147,7 @@ class CalendarView extends FormUserInputView
                 ))
             ),
             "css" => "delete-event-form",
+            "css_mobile" => "delete-event-form",
             "id" => $this->id_section,
             "close_modal_at_end" => $this->get_field_value('close_modal_at_end')
         ));
@@ -169,6 +170,7 @@ class CalendarView extends FormUserInputView
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => $children,
             "css" => "event-form",
+            "css_mobile" => "event-form",
             "id" => $this->id_section,
             "name" => htmlentities($this->name),
             "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
@@ -215,6 +217,7 @@ class CalendarView extends FormUserInputView
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => $children,
             "css" => "event-form",
+            "css_mobile" => "event-form",
             "id" => $this->id_section,
             "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
             "name" => htmlentities($this->name)
