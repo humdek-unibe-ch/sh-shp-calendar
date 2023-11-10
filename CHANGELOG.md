@@ -1,3 +1,7 @@
+# v1.1.1
+ - fix css files
+ - remove `calendar_source` field from the example: `calendar_and_calendars_example.json`
+
 # v1.1.0 - Requires SelfHelp 6.5.0+
 ### New Features
  - rework calendar. Now it is based  on [FullCalendar](https://fullcalendar.io) library

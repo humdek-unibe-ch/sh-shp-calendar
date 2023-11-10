@@ -906,15 +906,6 @@
               {
                 "id_styles": 87,
                 "style_name": "calendar",
-                "field_name": "calendar_source",
-                "id_fields": 712,
-                "locale": "all",
-                "gender": "male",
-                "content": ""
-              },
-              {
-                "id_styles": 87,
-                "style_name": "calendar",
                 "field_name": "label_add_event",
                 "id_fields": 718,
                 "locale": "de-CH",
@@ -1836,7 +1827,7 @@
     ]
   },
   "file_name": "selfhelp_section_494",
-  "time": "2023-11-10 14:30:21",
+  "time": "2023-11-10 15:28:42",
   "platform": "selfhelp",
   "version": {
     "application": "v6.5.0",
