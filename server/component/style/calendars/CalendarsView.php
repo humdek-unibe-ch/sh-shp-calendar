@@ -135,8 +135,8 @@ class CalendarsView extends FormUserInputView
     {
         $style = parent::output_content_mobile();
         $style['calendars'] = $this->model->get_calendars();
-        $style['style_add_event'] = $this->output_new_calendar_modal(true);
-        $style['style_edit_event'] = $this->output_edit_calendar_modal(true);
+        $style['style_add_calendar'] = $this->output_new_calendar_modal(true);
+        $style['style_edit_calendar'] = $this->output_edit_calendar_modal(true);
         return $style;
     }
 
