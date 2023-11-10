@@ -61,7 +61,7 @@ class CalendarsView extends FormUserInputView
     public function get_css_includes($local = array())
     {
         $local = array(
-            __DIR__ . "/css/calendar.css"
+            __DIR__ . "/css/calendars.css"
         );
         return parent::get_css_includes($local);
     }
