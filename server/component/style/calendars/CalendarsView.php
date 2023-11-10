@@ -127,7 +127,7 @@ class CalendarsView extends FormUserInputView
             "is_collapsible" => false,
             "url_edit" => "#",
             "children" => $children
-        ));        
+        ));
         $calendars_card->output_content();
     }
 
@@ -135,13 +135,15 @@ class CalendarsView extends FormUserInputView
     {
         $style = parent::output_content_mobile();
         $style['calendars'] = $this->model->get_calendars();
+        $style['style_add_event'] = $this->output_new_calendar_modal(true);
+        $style['style_edit_event'] = $this->output_edit_calendar_modal(true);
         return $style;
     }
 
     /**
      * render modal form in a card view for the new calendar
      */
-    public function output_new_calendar_modal()
+    public function output_new_calendar_modal($mobile = false)
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -165,14 +167,17 @@ class CalendarsView extends FormUserInputView
                 $form
             ),
         ));
-
-        $modal->output_content();
+        if ($mobile) {
+            return $modal->output_content_mobile();
+        } else {
+            $modal->output_content();
+        }
     }
 
     /**
      * render modal form in a card view for the edit mode for calendar
      */
-    public function output_edit_calendar_modal()
+    public function output_edit_calendar_modal($mobile = false)
     {
         $this->propagate_input_field_settings($this->form_children, false);
         $children = $this->form_children;
@@ -220,8 +225,11 @@ class CalendarsView extends FormUserInputView
                 $form, $delete_calendar
             ),
         ));
-
-        $modal->output_content();
+        if ($mobile) {
+            return $modal->output_content_mobile();
+        } else {
+            $modal->output_content();
+        }
     }
 }
 ?>
