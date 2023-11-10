@@ -1,0 +1,1845 @@
+{
+  "section": {
+    "section_name": "task-holder-div",
+    "id_sections": 494,
+    "style_name": "div",
+    "id_styles": 40,
+    "position": 0,
+    "fields": [
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "children",
+        "id_fields": 6,
+        "locale": "",
+        "gender": "",
+        "content": ""
+      },
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "css",
+        "id_fields": 23,
+        "locale": "all",
+        "gender": "male",
+        "content": "p-3 d-flex"
+      },
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "condition",
+        "id_fields": 91,
+        "locale": "all",
+        "gender": "male",
+        "content": "                    "
+      },
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "debug",
+        "id_fields": 97,
+        "locale": "all",
+        "gender": "male",
+        "content": "0"
+      },
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "data_config",
+        "id_fields": 145,
+        "locale": "all",
+        "gender": "male",
+        "content": "                    "
+      },
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "jquery_builder_json",
+        "id_fields": 180,
+        "locale": "all",
+        "gender": "male",
+        "content": ""
+      },
+      {
+        "id_styles": 40,
+        "style_name": "div",
+        "field_name": "css_mobile",
+        "id_fields": 182,
+        "locale": "all",
+        "gender": "male",
+        "content": ""
+      }
+    ],
+    "children": [
+      {
+        "section_name": "1699024095-div",
+        "id_sections": 494,
+        "style_name": "div",
+        "id_styles": 40,
+        "position": 0,
+        "fields": [
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "children",
+            "id_fields": 6,
+            "locale": "",
+            "gender": "",
+            "content": ""
+          },
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "css",
+            "id_fields": 23,
+            "locale": "all",
+            "gender": "male",
+            "content": "mr-3"
+          },
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "condition",
+            "id_fields": 91,
+            "locale": "all",
+            "gender": "male",
+            "content": "            "
+          },
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "debug",
+            "id_fields": 97,
+            "locale": "all",
+            "gender": "male",
+            "content": "0"
+          },
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "data_config",
+            "id_fields": 145,
+            "locale": "all",
+            "gender": "male",
+            "content": "            "
+          },
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "jquery_builder_json",
+            "id_fields": 180,
+            "locale": "all",
+            "gender": "male",
+            "content": ""
+          },
+          {
+            "id_styles": 40,
+            "style_name": "div",
+            "field_name": "css_mobile",
+            "id_fields": 182,
+            "locale": "all",
+            "gender": "male",
+            "content": ""
+          }
+        ],
+        "children": [
+          {
+            "section_name": "tasks-calendars",
+            "id_sections": 533,
+            "style_name": "calendars",
+            "id_styles": 95,
+            "position": 0,
+            "fields": [
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "children",
+                "id_fields": 6,
+                "locale": "",
+                "gender": "",
+                "content": ""
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "css",
+                "id_fields": 23,
+                "locale": "all",
+                "gender": "male",
+                "content": "mr-auto"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "name",
+                "id_fields": 57,
+                "locale": "all",
+                "gender": "male",
+                "content": "calendar-tasks"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "is_log",
+                "id_fields": 87,
+                "locale": "all",
+                "gender": "male",
+                "content": "1"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "condition",
+                "id_fields": 91,
+                "locale": "all",
+                "gender": "male",
+                "content": "                        "
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "debug",
+                "id_fields": 97,
+                "locale": "all",
+                "gender": "male",
+                "content": "0"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "data_config",
+                "id_fields": 145,
+                "locale": "all",
+                "gender": "male",
+                "content": "                        "
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "css_mobile",
+                "id_fields": 182,
+                "locale": "all",
+                "gender": "male",
+                "content": "mt-3 mb-3"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "close_modal_at_end",
+                "id_fields": 215,
+                "locale": "all",
+                "gender": "male",
+                "content": "1"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "label_delete_calendar",
+                "id_fields": 590,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Delete"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "label_calendar",
+                "id_fields": 591,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Task"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "label_card_title_calendars",
+                "id_fields": 648,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Tasks"
+              },
+              {
+                "id_styles": 95,
+                "style_name": "calendars",
+                "field_name": "label_edit_calendar",
+                "id_fields": 658,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Edit"
+              }
+            ],
+            "children": [
+              {
+                "section_name": "1699021756-input",
+                "id_sections": 528,
+                "style_name": "input",
+                "id_styles": 16,
+                "position": 0,
+                "fields": [
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Task Name"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "type_input",
+                    "id_fields": 54,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "text"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "placeholder",
+                    "id_fields": 55,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "calendar_name"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "min",
+                    "id_fields": 69,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "2000"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "                    "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "                    "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "format",
+                    "id_fields": 155,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  }
+                ],
+                "children": []
+              },
+              {
+                "section_name": "1699021774-input",
+                "id_sections": 528,
+                "style_name": "input",
+                "id_styles": 16,
+                "position": 10,
+                "fields": [
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Task Color"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "type_input",
+                    "id_fields": 54,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "color"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "placeholder",
+                    "id_fields": 55,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "color"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "min",
+                    "id_fields": 69,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "2000"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "        "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "        "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "format",
+                    "id_fields": 155,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "1699023887-card",
+        "id_sections": 494,
+        "style_name": "card",
+        "id_styles": 12,
+        "position": 10,
+        "fields": [
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "children",
+            "id_fields": 6,
+            "locale": "",
+            "gender": "",
+            "content": ""
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "title",
+            "id_fields": 22,
+            "locale": "de-CH",
+            "gender": "male",
+            "content": "Calendar"
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "css",
+            "id_fields": 23,
+            "locale": "all",
+            "gender": "male",
+            "content": "ml-auto"
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "type",
+            "id_fields": 28,
+            "locale": "all",
+            "gender": "male",
+            "content": "light"
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "is_expanded",
+            "id_fields": 46,
+            "locale": "all",
+            "gender": "male",
+            "content": "1"
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "is_collapsible",
+            "id_fields": 47,
+            "locale": "all",
+            "gender": "male",
+            "content": "1"
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "url_edit",
+            "id_fields": 48,
+            "locale": "all",
+            "gender": "male",
+            "content": ""
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "condition",
+            "id_fields": 91,
+            "locale": "all",
+            "gender": "male",
+            "content": "                "
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "debug",
+            "id_fields": 97,
+            "locale": "all",
+            "gender": "male",
+            "content": "0"
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "data_config",
+            "id_fields": 145,
+            "locale": "all",
+            "gender": "male",
+            "content": "                "
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "jquery_builder_json",
+            "id_fields": 180,
+            "locale": "all",
+            "gender": "male",
+            "content": ""
+          },
+          {
+            "id_styles": 12,
+            "style_name": "card",
+            "field_name": "css_mobile",
+            "id_fields": 182,
+            "locale": "all",
+            "gender": "male",
+            "content": ""
+          }
+        ],
+        "children": [
+          {
+            "section_name": "1699023769-calendar",
+            "id_sections": 532,
+            "style_name": "calendar",
+            "id_styles": 87,
+            "position": 0,
+            "fields": [
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "children",
+                "id_fields": 6,
+                "locale": "",
+                "gender": "",
+                "content": ""
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "title",
+                "id_fields": 22,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Subtask"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "css",
+                "id_fields": 23,
+                "locale": "all",
+                "gender": "male",
+                "content": ""
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "name",
+                "id_fields": 57,
+                "locale": "all",
+                "gender": "male",
+                "content": "sub_tasks"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "is_log",
+                "id_fields": 87,
+                "locale": "all",
+                "gender": "male",
+                "content": "1"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "condition",
+                "id_fields": 91,
+                "locale": "all",
+                "gender": "male",
+                "content": "                                                        "
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "debug",
+                "id_fields": 97,
+                "locale": "all",
+                "gender": "male",
+                "content": "0"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "config",
+                "id_fields": 124,
+                "locale": "all",
+                "gender": "male",
+                "content": "{\r\n    \"css\": \"subtask\",\r\n    \"height\": \"auto\",\r\n    \"form_calendars\": \"calendar-tasks\",\r\n    \"events\": {\r\n        \"title\": \"subtask_name\",\r\n        \"className\": \"status\",\r\n        \"startStr\": \"start\",\r\n        \"endStr\": \"end\"\r\n    }\r\n}"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "data_config",
+                "id_fields": 145,
+                "locale": "all",
+                "gender": "male",
+                "content": "                                                        "
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "redirect_at_end",
+                "id_fields": 169,
+                "locale": "all",
+                "gender": "male",
+                "content": "#"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "css_mobile",
+                "id_fields": 182,
+                "locale": "all",
+                "gender": "male",
+                "content": "mt-3"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "close_modal_at_end",
+                "id_fields": 215,
+                "locale": "all",
+                "gender": "male",
+                "content": "1"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_month",
+                "id_fields": 228,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Month2"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_week",
+                "id_fields": 229,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Week"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_day",
+                "id_fields": 230,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Day"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_calendar_add_event",
+                "id_fields": 548,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "+Subtask"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_list",
+                "id_fields": 550,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "List2"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_today",
+                "id_fields": 551,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Today"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_calendar_event",
+                "id_fields": 555,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Subtask"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_add_calendar",
+                "id_fields": 562,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "+Task"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_calendar_delete_event",
+                "id_fields": 564,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Delete"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "show_add_calendar_button",
+                "id_fields": 689,
+                "locale": "all",
+                "gender": "male",
+                "content": "1"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "calendar_source",
+                "id_fields": 712,
+                "locale": "all",
+                "gender": "male",
+                "content": ""
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_add_event",
+                "id_fields": 718,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Add event"
+              },
+              {
+                "id_styles": 87,
+                "style_name": "calendar",
+                "field_name": "label_edit_event",
+                "id_fields": 719,
+                "locale": "de-CH",
+                "gender": "male",
+                "content": "Edit event"
+              }
+            ],
+            "children": [
+              {
+                "section_name": "1699024676-selectCalendar",
+                "id_sections": 531,
+                "style_name": "selectCalendar",
+                "id_styles": 103,
+                "position": 0,
+                "fields": [
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Select Task"
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "calendar"
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "items",
+                    "id_fields": 66,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "    "
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "live_search",
+                    "id_fields": 141,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "    "
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "formName",
+                    "id_fields": 170,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "528-INTERNAL"
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "own_entries_only",
+                    "id_fields": 176,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 103,
+                    "style_name": "selectCalendar",
+                    "field_name": "allow_clear",
+                    "id_fields": 217,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "section_name": "1699024385-input",
+                "id_sections": 531,
+                "style_name": "input",
+                "id_styles": 16,
+                "position": 10,
+                "fields": [
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Subtask Name"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "type_input",
+                    "id_fields": 54,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "text"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "placeholder",
+                    "id_fields": 55,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "subtask_name"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "min",
+                    "id_fields": 69,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "2000"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "            "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "            "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "format",
+                    "id_fields": 155,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  }
+                ],
+                "children": []
+              },
+              {
+                "section_name": "1699024419-input",
+                "id_sections": 531,
+                "style_name": "input",
+                "id_styles": 16,
+                "position": 20,
+                "fields": [
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Start date"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "type_input",
+                    "id_fields": 54,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "date"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "placeholder",
+                    "id_fields": 55,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "start"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "min",
+                    "id_fields": 69,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "2000"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "                "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "                "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "format",
+                    "id_fields": 155,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  }
+                ],
+                "children": []
+              },
+              {
+                "section_name": "1699024459-input",
+                "id_sections": 531,
+                "style_name": "input",
+                "id_styles": 16,
+                "position": 30,
+                "fields": [
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Finish Date"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "type_input",
+                    "id_fields": 54,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "date"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "placeholder",
+                    "id_fields": 55,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "end"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "min",
+                    "id_fields": 69,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "2000"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "                            "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "                            "
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "format",
+                    "id_fields": 155,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 16,
+                    "style_name": "input",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  }
+                ],
+                "children": []
+              },
+              {
+                "section_name": "1699024515-select",
+                "id_sections": 531,
+                "style_name": "select",
+                "id_styles": 22,
+                "position": 40,
+                "fields": [
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Status"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "alt",
+                    "id_fields": 30,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "1"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "status"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "items",
+                    "id_fields": 66,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "[\r\n    {\r\n        \"value\":\"not_started\",\r\n        \"text\": \"Not Started\"\r\n    },\r\n    {\r\n        \"value\":\"started\",\r\n        \"text\": \"Started\"\r\n    },\r\n    {\r\n        \"value\":\"finished\",\r\n        \"text\": \"Finished\"\r\n    }\r\n]"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "is_multiple",
+                    "id_fields": 67,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "5"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "    "
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "live_search",
+                    "id_fields": 141,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "disabled",
+                    "id_fields": 142,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "    "
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "image_selector",
+                    "id_fields": 168,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 22,
+                    "style_name": "select",
+                    "field_name": "allow_clear",
+                    "id_fields": 217,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "section_name": "1699025077-textarea",
+                "id_sections": 531,
+                "style_name": "textarea",
+                "id_styles": 26,
+                "position": 50,
+                "fields": [
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "label",
+                    "id_fields": 8,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": "Description"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "css",
+                    "id_fields": 23,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "placeholder",
+                    "id_fields": 55,
+                    "locale": "de-CH",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "is_required",
+                    "id_fields": 56,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "name",
+                    "id_fields": 57,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "description"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "value",
+                    "id_fields": 58,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "min",
+                    "id_fields": 69,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "max",
+                    "id_fields": 70,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "2000"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "condition",
+                    "id_fields": 91,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "    "
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "debug",
+                    "id_fields": 97,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "data_config",
+                    "id_fields": 145,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "    "
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "locked_after_submit",
+                    "id_fields": 179,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": "0"
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "jquery_builder_json",
+                    "id_fields": 180,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  },
+                  {
+                    "id_styles": 26,
+                    "style_name": "textarea",
+                    "field_name": "css_mobile",
+                    "id_fields": 182,
+                    "locale": "all",
+                    "gender": "male",
+                    "content": ""
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "file_name": "selfhelp_section_494",
+  "time": "2023-11-10 14:30:21",
+  "platform": "selfhelp",
+  "version": {
+    "application": "v6.5.0",
+    "database": "v6.5.0"
+  }
+}
