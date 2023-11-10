@@ -127,8 +127,15 @@ class CalendarsView extends FormUserInputView
             "is_collapsible" => false,
             "url_edit" => "#",
             "children" => $children
-        ));
+        ));        
         $calendars_card->output_content();
+    }
+
+    public function output_content_mobile()
+    {
+        $style = parent::output_content_mobile();
+        $style['calendars'] = $this->model->get_calendars();
+        return $style;
     }
 
     /**
