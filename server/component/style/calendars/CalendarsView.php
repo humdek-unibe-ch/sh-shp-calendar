@@ -159,6 +159,7 @@ class CalendarsView extends FormUserInputView
             "children" => $children,
             "css" => "calendar-form",
             "id" => $this->id_section,
+            "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
         ));
         $modal = new BaseStyleComponent('modal', array(
             'id' => 'new-calendar',
@@ -199,6 +200,7 @@ class CalendarsView extends FormUserInputView
             ),
             "css" => "delete-calendar-form",
             "id" => $this->id_section,
+            "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
         ));
         $children[] = new BaseStyleComponent("input", array(
             "type_input" => "hidden",
@@ -217,6 +219,7 @@ class CalendarsView extends FormUserInputView
             "children" => $children,
             "css" => "calendar-form",
             "id" => $this->id_section,
+            "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
         ));
         $modal = new BaseStyleComponent('modal', array(
             'id' => 'edit-calendar',
