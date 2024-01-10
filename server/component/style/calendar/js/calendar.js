@@ -27,14 +27,13 @@ function initCalendar() {
         return;
     }
     var buttons = get_custom_buttons(calendar_data);
-    console.log(calendar_data);
     var calendarOptions = {
         themeSystem: 'bootstrap',
         locale: calendar_data['locale'],
         headerToolbar: {
-            left: buttons['buttons'],
+            start: buttons['buttons'],
             center: 'title',
-            right: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
+            end: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
         },
         buttonText: {
             today: calendar_data['label_today'],
@@ -113,6 +112,15 @@ function initCalendar() {
     }
     if (calendar_data['config']['initialView']) {
         calendarOptions['initialView'] = calendar_data['config']['initialView'];
+    }
+    if (calendar_data['config']['headerToolbar_start']) {
+        calendarOptions['headerToolbar']['start'] = calendar_data['config']['headerToolbar_start'];
+    }
+    if (calendar_data['config']['headerToolbar_center']) {
+        calendarOptions['headerToolbar']['center'] = calendar_data['config']['headerToolbar_center'];
+    }
+    if (calendar_data['config']['headerToolbar_end']) {
+        calendarOptions['headerToolbar']['end'] = calendar_data['config']['headerToolbar_end'];
     }
     calendar = new FullCalendar.Calendar($('#calendar-view')[0], calendarOptions);
     calendar.render();

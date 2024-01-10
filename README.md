@@ -15,6 +15,8 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
     "css": "class name",
     "height": "auto",
     "initialView": "dayGridMonth",
+    "headerToolbar_center": "",
+    "headerToolbar_end": "",
     "form_calendars": "form_name_for_calendars", 
     "events": {
         "title": "your_title_input_name",

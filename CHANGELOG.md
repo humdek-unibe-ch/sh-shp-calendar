@@ -1,5 +1,6 @@
 # v1.1.2
  - add `initialView` in `config` for style `calendar`. The values can be seen [here](https://fullcalendar.io/docs/initialView). If no value is set, the default one is `dayGridMonth`
+ - add `headerToolbar_start`, `headerToolbar_center` and `headerToolbar_end` in `config` for style `calendar`. The values can be seen [here](https://fullcalendar.io/docs/headerToolbar)
 
 # v1.1.1
  - fix css files
