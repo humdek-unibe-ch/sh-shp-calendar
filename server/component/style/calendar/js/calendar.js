@@ -27,8 +27,8 @@ function initCalendar() {
         return;
     }
     var buttons = get_custom_buttons(calendar_data);
-    calendar = new FullCalendar.Calendar($('#calendar-view')[0], {
-        initialView: 'dayGridMonth',
+    console.log(calendar_data);
+    var calendarOptions = {
         themeSystem: 'bootstrap',
         locale: calendar_data['locale'],
         headerToolbar: {
@@ -110,7 +110,11 @@ function initCalendar() {
         //     title.innerHTML = info.event.title;
         //     return { domNodes: [dot, time, title] }
         // },
-    });
+    }
+    if (calendar_data['config']['initialView']) {
+        calendarOptions['initialView'] = calendar_data['config']['initialView'];
+    }
+    calendar = new FullCalendar.Calendar($('#calendar-view')[0], calendarOptions);
     calendar.render();
 }
 

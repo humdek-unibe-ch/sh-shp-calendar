@@ -14,7 +14,8 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
  `{
     "css": "class name",
     "height": "auto",
-    "form_calendars": "form_name_for_calendars", //if you want to take the coloring from the calendar you need a field `color` in the calendar entry
+    "initialView": "dayGridMonth",
+    "form_calendars": "form_name_for_calendars", 
     "events": {
         "title": "your_title_input_name",
         "description": "your_description_input_name",
@@ -23,6 +24,7 @@ This is a Selfhelp Plugin that is used for presenting a calendar for the mobile 
         "className ": "your_class_name_input"
     }
  }`
+ - if you want to take the coloring from the calendar you need a field `color` in the calendar entry
  - `show_add_calendar_button` - enable for calendars button. Then a style `calendars` should be loaded on the page
  - style `calendars` requires input with name `calendar_name`
 

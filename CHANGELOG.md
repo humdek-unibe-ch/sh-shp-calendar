@@ -1,3 +1,6 @@
+# v1.1.2
+ - add `initialView` in `config` for style `calendar`. The values can be seen [here](https://fullcalendar.io/docs/initialView). If no value is set, the default one is `dayGridMonth`
+
 # v1.1.1
  - fix css files
  - remove `calendar_source` field from the example: `calendar_and_calendars_example.json`
