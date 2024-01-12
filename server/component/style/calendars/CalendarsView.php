@@ -219,8 +219,8 @@ class CalendarsView extends FormUserInputView
             "type" => $this->type,
             "url" => $_SERVER['REQUEST_URI'] . '#section-' . $this->id_section,
             "children" => $children,
-            "css" => "calendar-form",
-            "css_mobile" => "calendar-form",
+            "css" => "calendar-form calendar-form-edit",
+            "css_mobile" => "calendar-form calendar-form-edit",
             "id" => $this->id_section,
             "close_modal_at_end" => $this->get_field_value('close_modal_at_end'),
         ));

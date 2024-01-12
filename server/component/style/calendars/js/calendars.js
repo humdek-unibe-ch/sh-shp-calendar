@@ -15,6 +15,10 @@ function initCalendars() {
         $('#edit-calendar input[name="delete_record_id"]').val(calendarRecord['record_id']);
         Object.keys(calendarRecord).forEach(key => {
             $('#edit-calendar input[name="' + key + '[value]"]').val(calendarRecord[key]); //check if there is an input with that name
+            if($('#edit-calendar select[name="' + key + '[value]"]')){
+                $('#edit-calendar select[name="' + key + '[value]"]').val(calendarRecord[key]); //check if there is a select with that name
+                $('#edit-calendar select[name="' + key + '[value]"]').selectpicker('refresh');
+            }            
         });
         $("#edit-calendar").modal();
     });
