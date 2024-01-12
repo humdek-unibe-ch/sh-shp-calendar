@@ -1,6 +1,7 @@
 # v1.1.3 (Unpublished)
 ### Bugfix
  - properly load select field inputs in `calendar` modal form for editing.
+ - add css class for calendar form in edit mode
 
 # v1.1.2
  - add `initialView` in `config` for style `calendar`. The values can be seen [here](https://fullcalendar.io/docs/initialView). If no value is set, the default one is `dayGridMonth`
