@@ -1,4 +1,7 @@
-# v1.1.3 (Unpublished)
+# v1.1.3
+### New Features
+ - load plugin version using `BaseHook` class
+
 ### Bugfix
  - properly load select field inputs in `calendar` modal form for editing.
  - add css class for calendar form in edit mode
