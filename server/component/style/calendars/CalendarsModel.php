@@ -49,6 +49,6 @@ class CalendarsModel extends FormUserInputModel
      */
     public function get_calendars()
     {
-        return $this->user_input->get_data($this->section_id, 'AND deleted = 0', true, FORM_INTERNAL);
+        return $this->user_input->get_data($this->section_id, '', true);
     }
 }

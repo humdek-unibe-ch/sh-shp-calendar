@@ -1,3 +1,7 @@
+# v1.1.4 - Requires SelfHelp v7.0.0+ (Unpublished)
+### New Features
+ - make it compatible with the `user_input` refactoring
+
 # v1.1.3
 ### New Features
  - load plugin version using `BaseHook` class

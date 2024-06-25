@@ -50,15 +50,9 @@ class SelectCalendarModel extends FormFieldModel
      */
     public function get_calendars()
     {
-        $formInfo = explode('-', $this->get_db_field("formName"));
-        if (isset($formInfo[0]) && isset($formInfo[1])) {
-            $form_id = $formInfo[0];
-            $form_type = $formInfo[1];
-        } else {
-            return array();
-        }
+        $data_table_id = $this->get_db_field("data_table");
         $ownEntriesOnly = $this->get_db_field('own_entries_only');
-        $calendars =  $this->user_input->get_data($form_id, 'AND deleted = 0', $ownEntriesOnly, $form_type);
+        $calendars =  $this->user_input->get_data($data_table_id, '', $ownEntriesOnly);
         $items = array();
         foreach ($calendars as $key => $value) {
             $items[] = array(
